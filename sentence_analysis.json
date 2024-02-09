@@ -1,0 +1,201 @@
+[
+    {
+        "sentence": "Viivillä heiluu hammas.",
+        "words": {
+            "Viivillä": [
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Outer locative cases: Adessive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Outer locative cases: Adessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "heiluu": [
+                {
+                    "lemma": "heilua",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hammas": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "(Mostly) Syntactic cases: Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        }
+    },
+    {
+        "sentence": "Anteeksi, missä täällä on vessa?",
+        "words": {
+            "Anteeksi": [
+                {
+                    "lemma": "anteeksi",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "missä": [
+                {
+                    "lemma": "missä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "täällä": [
+                {
+                    "lemma": "täällä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vessa": [
+                {
+                    "lemma": "vessa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@<SPRED"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject predicate,",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "(Mostly) Syntactic cases: Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        }
+    }
+]

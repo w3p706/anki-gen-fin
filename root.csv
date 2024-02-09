@@ -1,0 +1,210 @@
+First Column,Second Column
+Dash,XXX check this tag!
+Dial/Finland,XXX check this tag!
+Dial/standard,XXX check this tag!
+Gyr,XXX check this tag!
+Pref-,XXX check this tag!
+Pro,XXX check this tag!
+TruncPrefix,XXX check this tag!
+Use/N,XXX check this tag!
+Use/sub,XXX check this tag!
+s,XXX check this tag!
+V,Verb
+N,Noun
+A,Adjective
+ACR,Acronym
+ABBR,Abbreviation
+Acr,Acronym
+Num,Numerals
+Adv,Adverb
+Pron,Pronoun
+Pcle,"Particle, except:"
+Interj,Interjection
+Cmt,"hmm, what is this?"
+IV,Intransitive verb
+TV,Transitive verb
+Prop,Proper noun
+Pers,Personal
+Dem,Demonstrative
+Interr,Interrogative
+Rel,Relative
+Qu,Quantor
+Qnt,Quantor?????
+Refl,Reflexive
+Recipr,Reciprocal
+Indef,Indefinite
+Sem/Human,Semantic class: Human
+Sem/Geo,Semantic class: Geographic
+Sem/Org,Semantic class: Organisation
+Sem/Build,
+Sem/Build-room,
+Sem/Cat,
+Sem/Date,
+Sem/Domain,
+Sem/Dummytag,
+Sem/Event,
+Sem/Fem,
+Sem/Group_Hum,
+Sem/Hum,
+Sem/ID,
+Sem/Mal,
+Sem/Mat,
+Sem/Measr,
+Sem/Money,
+Sem/Obj,
+Sem/Obj-el,
+Sem/Obj-ling,
+Sem/Org_Prod-audio,
+Sem/Org_Prod-vis,
+Sem/Plc,
+Sem/Prod-vis,
+Sem/Route,
+Sem/Rule,
+Sem/State-sick,
+Sem/Substnc,
+Sem/Time-clock,
+Sem/Tool-it,
+Sem/Txt,
+Sem/Veh,
+Sem/Year,
+Card,Cardinal
+Ord,Ordinals
+CC,Coordinating
+CS,Adverbial
+Adp,Adposition
+Po,Postposition
+Pr,Preposition
+Arab,
+Attr,
+Coll,
+Rom,
+Pref,Prefixes
+Suff,Suffixes
+Punct,any punctuation
+Quote,quote marks
+Sg,Singular
+Pl,Plural
+Nom,Nominative
+Par,Partitive
+Gen,Genitive
+Ine,Inessive
+Ela,Elative
+Ill,Illative
+Ade,Adessive
+Abl,Ablative
+All,Allative
+Ess,Essive
+Ins,Instructive
+Abe,Abessive
+Tra,Translative
+Com,Comitative
+Lat,Lative case
+Acc,Explicit accusative analysis
+Prl,Adverbial cases: Prolative
+Distr,Distributive
+Tempr,Temporal
+PxSg1,Possessives: First singular (mine)
+PxSg2,Second singular (yours)
+PxSg3,Third singular (his)
+PxPl1,First plural (ours)
+PxPl2,Second plural (yours)
+PxPl3,Third plural (theirs)
+Px3,Third ambiguous (his/theirs)
+Sg1,Verbs: First singular (I)
+Sg2,Second singular (your
+Sg3,Third singular (he)
+Pl1,First plural (we)
+Pl2,Second plural (you)
+Pl3,Third plural (thy)
+Act,Active voice
+Pss,Passive voice
+Prs,Non-past (present)
+Prt,Past (preterite)
+Ind,Common moods: Indicative
+Cond,Conditional
+Pot,Potential
+Imprt,Imperative
+Opt,Archaic moods: Optative
+Eventv,Eventive
+Sg1,First singular
+Sg2,Second singular
+Sg3,Third singular
+Pl1,First plural
+Pl2,Second plural
+Pl3,Third plural
+ConNeg,Connegative form
+Neg,Negation verb
+InfA,A infinitive (first)
+InfE,E infinitive (second)
+InfMa,MA infinitive (third)
+Der/minen,minen derivation (fourth)
+Der/maisilla,maisilla derivation (fifth)
+PrfPrc,"NUT participle (first, perfect)"
+PrsPrc,"VA participle (second, present)"
+NegPrc,Negation participle
+AgPrc,Agent partiicple
+Comp,Comparative
+Superl,"Superlative (was +Sup, now standardised)"
+Foc/han,-hAn; affirmative etc.
+Foc/kaan,"-kAAn; ""neither"""
+Foc/kin,"-kin; ""also"""
+Foc/pa,"-pA; ""indeed"""
+Foc/s,-s; polite?
+Foc/ka,"-kA; ""nor"""
+Qst,-kO: Question focus
+Der/sti,Common derivations: A→Adv (in A manner)
+Der/ja,V→N (doer of V)
+Der/inen,N→A (containing N)
+Der/lainen,N→A (style of N)
+Der/tar,N→N (feminine N)
+Der/llinen,N→N (consisting of N)
+Der/ton,N→A (without N)
+Der/tse,N→Adp (via N)
+Der/vs,A→N (quality of A)
+Der/u,V→N (act of V)
+Der/ttain,N→Adv (by amounts of N)
+Der/ttaa,V→V (make someone do V)
+Der/tattaa,"V→V (make someone do V; ""first indirection"")"
+Der/tatuttaa,"V→V (make someone do V; ""second indirection"")"
+Der/uus,A→N (A-ness)
+Der/nti,V→N (regular derivation from all but 2 -da/-dä V)
+Err/Orth,Sub-standard usage
+Err/Hyph,
+Err/Lex,
+Err/SpaceCmp,
+Err/MissingSpace,
+Use/Marg,Marginal
+Use/Rare,Rare
+Use/NG,Do not generate
+Use/GC,Do not generate
+Use/Hyphen,With hyphens
+Use/NoHyphens,With hyphens
+Use/-PMatch,
+Use/-Spell,
+Use/Arch,
+Use/SpellNoSugg,
+Use/Circ,
+v1,
+v2,
+Dial,any unclassified dialect
+Dial/Standard,standard spoken Finnish
+Dial/East,Eastern dialects
+Dial/West,Western dialects
+Dial/Southwest,South-western dialects
+Dial/Häme,Tavastian dialects
+Dial/Eteläpohjalaiset,South Osthrobotnian dialects
+Dial/Keskipohjalaiset,Middle Osthrobotnian dialects
+Dial/Peräpohjalaiset,North Osthrobotnian dialects
+Dial/North,North Finnish dialects
+Dial/Savo,Savonian dialects
+Dial/Southeast,South-eastern dialects
+OLang/ENG,
+OLang/eng,"is a typo, FIX"
+OLang/FIN,
+OLang/NNO,
+OLang/NOB,
+OLang/RUS,
+OLang/SMA,
+OLang/SME,
+OLang/SWE,
+OLang/UND,
