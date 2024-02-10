@@ -1,8 +1,16 @@
 ﻿from uralicNLP import uralicApi
 from uralicNLP import tokenizer
 from uralicNLP.cg3 import Cg3
+from tortoise import run_async
+from tortoise.functions import Count
 import csv
-import json
+import logging
+from model import LearningItem, Analysis  # Adjust the import path as necessary
+import db
+import logger
+
+
+logger = logging.getLogger(__name__)
 
 
 cg = Cg3("fin")
@@ -97,24 +105,18 @@ def process_morphology(arr, language, analysis_label, root):
 
 
 
-def disambiguate_sentence(sentence):
-    sentence_analysis = {
-            "sentence": sentence,
-            "words": {}
-    }
+async def disambiguate_sentence(leaning_item):
 
-    tokens = tokenizer.words(sentence)
+    tokens = tokenizer.words(leaning_item.native_text)
+    leaning_item.tokenized = tokens
+    leaning_item.save()
 
     disambiguations = cg.disambiguate(tokens)
     for word, disambiguation in disambiguations:
-        possible_words = disambiguation
-        for possible_word in possible_words:
 
+        for possible_word in disambiguation:
             if (possible_word.morphology[0] == 'Punct'):
                 continue
-
-            if word not in sentence_analysis["words"]:
-                sentence_analysis["words"][word] = []
 
             weight, analysis_label, labels, language = process_morphology(possible_word.morphology, language_dict, analysis_label_dict, root_dict)
 
@@ -127,57 +129,42 @@ def disambiguate_sentence(sentence):
                 "language": language
             }
 
-            sentence_analysis["words"][word].append(word_analysis)
+            analysis = '+'.join([item for item in word_analysis['morphology'] if not item.startswith('<')])
 
-    return sentence_analysis
+            await Analysis.create(
+                    index=tokens.index(word),
+                    word=word, 
+                    lemma=possible_word.lemma, 
+                    analysis = possible_word.lemma + '+' + analysis,
+                    analysis_detail=word_analysis,
+                    learning_item_id = leaning_item.learning_item_id
+                )
+
+
+
 
 # https://kaikki.org/dictionary/Finnish/index.html
+# Glinda, Nicole, Charlotte, mathilda
 
 root_dict = get_root_lexc('root.lexc')
 analysis_label_dict = read_analysis_labels('analysis_label.csv')
 
-result = []
-result.append(disambiguate_sentence("Viivillä heiluu hammas."))
-result.append(disambiguate_sentence("Anteeksi, missä täällä on vessa?"))
+async def run_disambiguation():
+    analysis_count = 0
+    await db.init() 
 
-# Specify the file path where you want to save the JSON output
-file_path = 'sentence_analysis.json'
+    items_without_analysis = await LearningItem.annotate(
+        analysis_count=Count('analysis')
+    ).filter(analysis_count=0)
 
-# Write the structure to a file in JSON format
-with open(file_path, 'w') as json_file:
-    json.dump(result, json_file, ensure_ascii=False, indent=4)
+    for item in items_without_analysis:
+        await disambiguate_sentence(item)
 
-print(f"Structure saved as JSON to {file_path}")
+        analysis_count += 1
+        logger.info(f'Analysis for {analysis_count}/{len(items_without_analysis)} saved to database')
 
-
-
-# disambiguate_sentence("Nainen harjaa hampaitaan.")
-# disambiguate_sentence("Käytkö sinä kaupassa, vai käynkö minä?")
-# disambiguate_sentence("Minun täytyy vaihtaa rahaa ulkomaanmatkaa varten.")
-# disambiguate_sentence("Viivillä on muumiyöpuku.")
-# disambiguate_sentence("Siivooja petaa sängyn hotellihuoneessa.")
-# disambiguate_sentence("Tämä ruoka on liian tulista minulle.")
+    # Log the analysis count
+    logger.info(f'Total number of analyses performed: {analysis_count}')
 
 
-# [('Kuusi', [<kuusi - Num, <fin>, Card, Sg, Nom, <W:0.000000>, @>N>, <kuusi - Num, <fin>, Sg, Nom, <W:0.000000>, @SUBJ>>, <kuusi - N, <fin>, Sg, Nom, <W:0.000000>, @>N>]),
-#  ('kuusi', [<kuusi - Num, <fin>, Card, Sg, Nom, <W:0.000000>, @N<>, <kuusi - Num, <fin>, Sg, Nom, <W:0.000000>, @N<>, <kuusi - N, <fin>, Sg, Nom, <W:0.000000>, @SUBJ>>]),
-#  ('kasvaa', [<kasvaa - V, <fin>, Act, Ind, Prs, Sg3, <W:0.000000>, @+FMAINV>]),
-#  ('kuussa', [<kuu - N, <fin>, Sg, Ine, <W:0.000000>, @X>])]
-      
-
-
-####################
-# kuusi ['Num', '<fin>', 'Card', 'Sg', 'Nom', '<W:0.000000>', '@>N']
-# kuusi ['Num', '<fin>', 'Sg', 'Nom', '<W:0.000000>', '@SUBJ>']
-# kuusi ['N', '<fin>', 'Sg', 'Nom', '<W:0.000000>', '@>N']
-
-
-# kuusi ['Num', '<fin>', 'Card', 'Sg', 'Nom', '<W:0.000000>', '@N<']
-# kuusi ['Num', '<fin>', 'Sg', 'Nom', '<W:0.000000>', '@N<']
-# kuusi ['N', '<fin>', 'Sg', 'Nom', '<W:0.000000>', '@SUBJ>']
-
-
-# kasvaa ['V', '<fin>', 'Act', 'Ind', 'Prs', 'Sg3', '<W:0.000000>', '@+FMAINV']
-# kuu ['N', '<fin>', 'Sg', 'Ine', '<W:0.000000>', '@X']       
-      
-
+run_async(run_disambiguation())

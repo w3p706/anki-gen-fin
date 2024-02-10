@@ -126,10 +126,60 @@
         },
         "translation": "Viivi, have you brushed your teeth?",
         "sides": "Single",
-        "folder": "101::LB-S1-L11"
+        "folder": "101::LB-S1-L11",
+        "explanation": [
+            {
+                "wort": "Viivi",
+                "basis": "Viivi",
+                "f\u00e4lle": [
+                    {
+                        "nominativ": "Nominativ; Grundform, als Subjekt eines Satzes"
+                    }
+                ],
+                "bedeutung": "Viivi",
+                "erkl\u00e4rung": "Das Wort 'Viivi' ist ein finnischer Eigenname und wird hier im Nominativ verwendet, da es das Subjekt des Satzes ist. Nominativ ist die Grundform von Substantiven und Eigenamen, die verwendet wird, wenn ein Wort als Subjekt fungiert oder alleine steht. In diesem Kontext wird 'Viivi' direkt angesprochen und steht am Satzanfang, was typisch f\u00fcr direkte Ansprachen ist. 'Viivi' ist ein weiblicher Vorname in Finnland.",
+                "beispiel": {
+                    "finnisch": "Viivi l\u00e4hti kouluun.",
+                    "deutsch": "Viivi ging zur Schule."
+                }
+            },
+            {
+                "wort": "harjannut",
+                "basis": "harjata",
+                "f\u00e4lle": [
+                    {
+                        "-nut": "NUT-Partizip; erste Vergangenheitsform, perfekt"
+                    }
+                ],
+                "bedeutung": "geputzt, geb\u00fcrstet",
+                "erkl\u00e4rung": "Das finnische Verb 'harjata' bedeutet 'putzen' oder 'b\u00fcrsten'. Das Wort ist hier in der Vergangenheitsform, genauer im Perfekt, durch die Endung '-nut' f\u00fcr die Handlung im Singular verwendet. Es zeigt an, dass die Handlung, in diesem Fall das Putzen oder B\u00fcrsten, in der Vergangenheit abgeschlossen wurde. Dies ist im Finnischen ein \u00fcblicher Weg, um vergangene Ereignisse auszudr\u00fccken.",
+                "beispiel": {
+                    "finnisch": "Olen harjannut koirani ennen kuin menimme ulos.",
+                    "deutsch": "Ich habe meinen Hund geb\u00fcrstet, bevor wir nach drau\u00dfen gegangen sind."
+                }
+            },
+            {
+                "wort": "hampaasi",
+                "basis": "hammas",
+                "f\u00e4lle": [
+                    {
+                        "-a": "partitiv; teilweise, unbestimmte Menge"
+                    },
+                    {
+                        "-si": "2. Person Singular possessivsuffix; dein(e)"
+                    }
+                ],
+                "bedeutung": "deine Z\u00e4hne",
+                "erkl\u00e4rung": "Das finnische Wort 'hammas' bedeutet 'Zahn' auf Deutsch. In der Pluralform wird 'hammas' zu 'hampaat', um mehr als einen Zahn zu bezeichnen. Das Partitiv 'a' (-ta/-t\u00e4) in 'hampaasi' zeigt eine unvollst\u00e4ndige oder unbestimmte Menge an, was typisch f\u00fcr direkte Objekte in solchen S\u00e4tzen ist, die eine Handlung beschreiben, welche nicht zu einem bestimmten Endzustand f\u00fchrt. Das Suffix '-si' zeigt an, dass die Z\u00e4hne der Person geh\u00f6ren, an die gesprochen wird, also 'deine Z\u00e4hne'. Das Suffix wird direkt an das Wort 'hampaat' angeh\u00e4ngt, woraus 'hampaasi' entsteht, um 'deine Z\u00e4hne' zu bedeuten. Dieses Wort wird verwendet, wenn man gew\u00f6hnlich nach dem Zustand von pers\u00f6nlichen Gegenst\u00e4nden oder Teilen in Bezug auf die Angesprochene Person fragt.",
+                "beispiel": {
+                    "finnisch": "Muista pest\u00e4 hampaasi joka ilta.",
+                    "deutsch": "Denk daran, deine Z\u00e4hne jeden Abend zu putzen."
+                }
+            }
+        ]
     },
     {
-        "sentence": "Oletko käynyt vessassa?",
+        "sentence": "Oletko k\u00e4ynyt vessassa?",
         "words": {
             "Oletko": [
                 {
@@ -158,9 +208,9 @@
                     "language": "Finnish"
                 }
             ],
-            "käynyt": [
+            "k\u00e4ynyt": [
                 {
-                    "lemma": "käydä",
+                    "lemma": "k\u00e4yd\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -207,10 +257,60 @@
         },
         "translation": "Have you been to the bathroom?",
         "sides": "Single",
-        "folder": "101::LB-S1-L11"
+        "folder": "101::LB-S1-L11",
+        "explanation": [
+            {
+                "wort": "Oletko",
+                "basis": "olla",
+                "endungen": [
+                    {
+                        "-t": "2. Person Singular; du"
+                    },
+                    {
+                        "-ko": "Fragepartikel; deutet auf eine Frage hin"
+                    }
+                ],
+                "bedeutung": "bist du",
+                "erkl\u00e4rung": "Das finnische Verb 'olla' bedeutet 'sein' und ist ein Auxiliarverb (Hilfsverb), das in verschiedenen Zeitformen und Modi verwendet wird. In diesem Fall wird 'olla' im Kontext einer Frage verwendet, erkennbar an der Endung '-ko', welche eine Ja/Nein-Frage kennzeichnet. Die Form 'olet' ist die 2. Person Singular Pr\u00e4sens des Verbs 'olla', was 'du bist' bedeutet. Die Kombination 'oletko' wird demnach verwendet, um jemanden direkt in einer Ja/Nein-Frage anzusprechen.",
+                "beispiel": {
+                    "finnisch": "Oletko n\u00e4hnyt t\u00e4m\u00e4n elokuvan?",
+                    "deutsch": "Hast du diesen Film gesehen?"
+                }
+            },
+            {
+                "wort": "k\u00e4ynyt",
+                "basis": "k\u00e4yd\u00e4",
+                "f\u00e4lle": [
+                    {
+                        "-yt": "nut-Partizip; verwendet um abgeschlossene Handlungen zu bezeichnen"
+                    }
+                ],
+                "bedeutung": "besucht, war",
+                "erkl\u00e4rung": "Das finnische Verb 'k\u00e4yd\u00e4' bedeutet 'gehen' oder 'besuchen' auf Deutsch und bezieht sich auf die Aktion, irgendwohin zu gehen oder etwas zu besuchen. In seiner Nut-Partizip-Form (k\u00e4ynyt) wird es verwendet, um eine abgeschlossene Handlung auszudr\u00fccken, also etwas, das bereits geschehen ist. Die Endung '-yt' zeigt an, dass das Verb in der Einzahl und im Nut-Partizip steht, was eine perfekte, also abgeschlossene Handlung beschreibt. Diese Form wird oft in Fragen verwendet, um zu erfahren, ob jemand bereits irgendwo war oder etwas getan hat, und dr\u00fcckt im Kontext des Satzes 'Oletko k\u00e4ynyt vessassa?' (Hast du das Badezimmer besucht?) die vollendete Handlung des Besuchs aus.",
+                "beispiel": {
+                    "finnisch": "H\u00e4n on jo k\u00e4ynyt kaupassa.",
+                    "deutsch": "Er/Sie ist schon im Laden gewesen."
+                }
+            },
+            {
+                "wort": "vessassa",
+                "basis": "vessa",
+                "f\u00e4lle": [
+                    {
+                        "-ssa": "inessiv; innerhalb von, in etwas drin"
+                    }
+                ],
+                "bedeutung": "im Bad, in der Toilette",
+                "erkl\u00e4rung": "Das finnische Wort 'vessa' ist eine umgangssprachliche Bezeichnung f\u00fcr 'Toilette' oder 'WC'. Der Inessiv '-ssa' wird hier verwendet, um den Ort ('in der Toilette') anzugeben, und impliziert die Frage nach einem Aufenthalt oder einer Handlung, die in diesem spezifischen Ort stattfindet.",
+                "beispiel": {
+                    "finnisch": "Miss\u00e4 vessa on?",
+                    "deutsch": "Wo ist die Toilette?"
+                }
+            }
+        ]
     },
     {
-        "sentence": "Oletko vaihtanut yöpuvun?",
+        "sentence": "Oletko vaihtanut y\u00f6puvun?",
         "words": {
             "Oletko": [
                 {
@@ -264,9 +364,9 @@
                     "language": "Finnish"
                 }
             ],
-            "yöpuvun": [
+            "y\u00f6puvun": [
                 {
-                    "lemma": "yöpuku",
+                    "lemma": "y\u00f6puku",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -289,14 +389,61 @@
         },
         "translation": "Have you changed into your pajamas?",
         "sides": "Single",
-        "folder": "101::LB-S1-L11"
+        "folder": "101::LB-S1-L11",
+        "explanation": [
+            {
+                "wort": "Oletko",
+                "basis": "olla",
+                "f\u00e4lle": [
+                    {
+                        "-ko": "Fragepartikel; kennzeichnet eine Frage"
+                    }
+                ],
+                "bedeutung": "bist du",
+                "erkl\u00e4rung": "Das finnische Verb 'olla' bedeutet 'sein' auf Deutsch und geh\u00f6rt zu den am h\u00e4ufigsten verwendeten Verben im Finnischen. In seiner Grundform 'olla' dr\u00fcckt es das Sein oder die Existenz aus.\nDie Endung '-ko' ist eine Fragepartikel, die an die Verbform angeh\u00e4ngt wird, um aus einem Aussagesatz eine Frage zu machen. Im Kontext 'Oletko' zeigt es an, dass an den Gespr\u00e4chspartner eine Frage gerichtet ist, hier speziell 'bist du'.\nDie Verwendung von '-ko' am Ende des Verbs ist eine \u00fcbliche Methode im Finnischen, um einfache Ja/Nein-Fragen zu bilden. In diesem Kontext fragt man, ob eine bestimmte Handlung (das Wechseln des Schlafanzugs) von der angesprochenen Person vollzogen wurde.",
+                "beispiel": {
+                    "finnisch": "Oletko sy\u00f6nyt aamiaista?",
+                    "deutsch": "Hast du gefr\u00fchst\u00fcckt?"
+                }
+            },
+            {
+                "wort": "vaihtanut",
+                "basis": "vaihtaa",
+                "f\u00e4lle": [
+                    {
+                        "nut": "Partizip Perfekt; wurde benutzt, um eine abgeschlossene Handlung zu beschreiben"
+                    }
+                ],
+                "bedeutung": "hat gewechselt",
+                "erkl\u00e4rung": "Das finnische Verb 'vaihtaa' bedeutet 'wechseln' oder 'tauschen' auf Deutsch. Die Form 'vaihtanut' ist das Partizip Perfekt, welches verwendet wird, um eine abgeschlossene Handlung zu beschreiben. In S\u00e4tzen wird es oft verwendet, um anzugeben, dass jemand etwas zu einem bestimmten, fr\u00fcheren Zeitpunkt getan hat.",
+                "beispiel": {
+                    "finnisch": "Olen jo vaihtanut rahaa euroiksi.",
+                    "deutsch": "Ich habe das Geld schon in Euro gewechselt."
+                }
+            },
+            {
+                "wort": "y\u00f6puvun",
+                "basis": "y\u00f6puku",
+                "f\u00e4lle": [
+                    {
+                        "-n": "genitiv; zeigt Besitz oder Zugeh\u00f6rigkeit an"
+                    }
+                ],
+                "bedeutung": "des Nachthemdes",
+                "erkl\u00e4rung": "Das finnische Wort 'y\u00f6puku' setzt sich aus zwei Teilen zusammen: 'y\u00f6' und 'puku'.\n'y\u00f6': Dieser Teil bedeutet 'Nacht'.\n'puku': Dies bedeutet 'Kleid' oder 'Anzug'. Zusammen bezieht sich 'y\u00f6puku' auf ein Kleidungsst\u00fcck, das speziell f\u00fcr die Nacht bestimmt ist, typischerweise ein Nachthemd oder Pyjama.\nIn dem gegebenen Satz wird 'y\u00f6puvun' in der Genitivform verwendet, um Besitz oder Zugeh\u00f6rigkeit auszudr\u00fccken. Diese Form wird ben\u00f6tigt, da im Satz nach dem Wechsel des Nachthemdes gefragt wird, wodurch der genitiv die Zugeh\u00f6rigkeit zum Nachthemd anzeigt.",
+                "beispiel": {
+                    "finnisch": "Ostin uuden y\u00f6puvun viime viikolla.",
+                    "deutsch": "Ich habe letzte Woche ein neues Nachthemd gekauft."
+                }
+            }
+        ]
     },
     {
-        "sentence": "Hyvä. Mene sänkyyn, niin luen iltasadun.",
+        "sentence": "Hyv\u00e4. Mene s\u00e4nkyyn, niin luen iltasadun.",
         "words": {
-            "Hyvä": [
+            "Hyv\u00e4": [
                 {
-                    "lemma": "hyvä",
+                    "lemma": "hyv\u00e4",
                     "morphology": [
                         "A",
                         "<fin>",
@@ -317,7 +464,7 @@
             ],
             "Mene": [
                 {
-                    "lemma": "mennä",
+                    "lemma": "menn\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -338,9 +485,9 @@
                     "language": "Finnish"
                 }
             ],
-            "sänkyyn": [
+            "s\u00e4nkyyn": [
                 {
-                    "lemma": "sänky",
+                    "lemma": "s\u00e4nky",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -590,11 +737,11 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "yöpuku",
+        "sentence": "y\u00f6puku",
         "words": {
-            "yöpuku": [
+            "y\u00f6puku": [
                 {
-                    "lemma": "yöpuku",
+                    "lemma": "y\u00f6puku",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -620,9 +767,9 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Viivillä heiluu hammas.",
+        "sentence": "Viivill\u00e4 heiluu hammas.",
         "words": {
-            "Viivillä": [
+            "Viivill\u00e4": [
                 {
                     "lemma": "Viivi",
                     "morphology": [
@@ -797,11 +944,11 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Käytkö sinä kaupassa, vai käynkö minä?",
+        "sentence": "K\u00e4ytk\u00f6 sin\u00e4 kaupassa, vai k\u00e4ynk\u00f6 min\u00e4?",
         "words": {
-            "Käytkö": [
+            "K\u00e4ytk\u00f6": [
                 {
-                    "lemma": "käydä",
+                    "lemma": "k\u00e4yd\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -826,9 +973,9 @@
                     "language": "Finnish"
                 }
             ],
-            "sinä": [
+            "sin\u00e4": [
                 {
-                    "lemma": "sinä",
+                    "lemma": "sin\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -887,9 +1034,9 @@
                     "language": "Finnish"
                 }
             ],
-            "käynkö": [
+            "k\u00e4ynk\u00f6": [
                 {
-                    "lemma": "käydä",
+                    "lemma": "k\u00e4yd\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -914,9 +1061,9 @@
                     "language": "Finnish"
                 }
             ],
-            "minä": [
+            "min\u00e4": [
                 {
-                    "lemma": "minä",
+                    "lemma": "min\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -943,7 +1090,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Anteeksi, missä täällä on vessa?",
+        "sentence": "Anteeksi, miss\u00e4 t\u00e4\u00e4ll\u00e4 on vessa?",
         "words": {
             "Anteeksi": [
                 {
@@ -962,9 +1109,9 @@
                     "language": "Finnish"
                 }
             ],
-            "missä": [
+            "miss\u00e4": [
                 {
-                    "lemma": "missä",
+                    "lemma": "miss\u00e4",
                     "morphology": [
                         "Adv",
                         "<fin>",
@@ -979,9 +1126,9 @@
                     "language": "Finnish"
                 }
             ],
-            "täällä": [
+            "t\u00e4\u00e4ll\u00e4": [
                 {
-                    "lemma": "täällä",
+                    "lemma": "t\u00e4\u00e4ll\u00e4",
                     "morphology": [
                         "Adv",
                         "<fin>",
@@ -1048,11 +1195,11 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Minun täytyy vaihtaa rahaa ulkomaanmatkaa varten.",
+        "sentence": "Minun t\u00e4ytyy vaihtaa rahaa ulkomaanmatkaa varten.",
         "words": {
             "Minun": [
                 {
-                    "lemma": "minä",
+                    "lemma": "min\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -1073,9 +1220,9 @@
                     "language": "Finnish"
                 }
             ],
-            "täytyy": [
+            "t\u00e4ytyy": [
                 {
-                    "lemma": "täytyä",
+                    "lemma": "t\u00e4yty\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -1189,9 +1336,9 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Viivillä on muumiyöpuku.",
+        "sentence": "Viivill\u00e4 on muumiy\u00f6puku.",
         "words": {
-            "Viivillä": [
+            "Viivill\u00e4": [
                 {
                     "lemma": "Viivi",
                     "morphology": [
@@ -1262,9 +1409,9 @@
                     "language": "Finnish"
                 }
             ],
-            "muumiyöpuku": [
+            "muumiy\u00f6puku": [
                 {
-                    "lemma": "yöpuku",
+                    "lemma": "y\u00f6puku",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -1308,7 +1455,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Siivooja petaa sängyn hotellihuoneessa.",
+        "sentence": "Siivooja petaa s\u00e4ngyn hotellihuoneessa.",
         "words": {
             "Siivooja": [
                 {
@@ -1380,9 +1527,9 @@
                     "language": "Finnish"
                 }
             ],
-            "sängyn": [
+            "s\u00e4ngyn": [
                 {
-                    "lemma": "sänky",
+                    "lemma": "s\u00e4nky",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -1429,7 +1576,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Lue tänään oikein pitkä iltasatu!",
+        "sentence": "Lue t\u00e4n\u00e4\u00e4n oikein pitk\u00e4 iltasatu!",
         "words": {
             "Lue": [
                 {
@@ -1454,9 +1601,9 @@
                     "language": "Finnish"
                 }
             ],
-            "tänään": [
+            "t\u00e4n\u00e4\u00e4n": [
                 {
-                    "lemma": "tänään",
+                    "lemma": "t\u00e4n\u00e4\u00e4n",
                     "morphology": [
                         "Adv",
                         "<fin>",
@@ -1488,9 +1635,9 @@
                     "language": "Finnish"
                 }
             ],
-            "pitkä": [
+            "pitk\u00e4": [
                 {
-                    "lemma": "pitkä",
+                    "lemma": "pitk\u00e4",
                     "morphology": [
                         "A",
                         "<fin>",
@@ -1609,7 +1756,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "vaihtaa työpaikkaa",
+        "sentence": "vaihtaa ty\u00f6paikkaa",
         "words": {
             "vaihtaa": [
                 {
@@ -1636,9 +1783,9 @@
                     "language": "Finnish"
                 }
             ],
-            "työpaikkaa": [
+            "ty\u00f6paikkaa": [
                 {
-                    "lemma": "työpaikka",
+                    "lemma": "ty\u00f6paikka",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -1664,7 +1811,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "vaihtaa tervehdyksiä",
+        "sentence": "vaihtaa tervehdyksi\u00e4",
         "words": {
             "vaihtaa": [
                 {
@@ -1691,7 +1838,7 @@
                     "language": "Finnish"
                 }
             ],
-            "tervehdyksiä": [
+            "tervehdyksi\u00e4": [
                 {
                     "lemma": "tervehdys",
                     "morphology": [
@@ -2059,7 +2206,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "vaihtaa väriä",
+        "sentence": "vaihtaa v\u00e4ri\u00e4",
         "words": {
             "vaihtaa": [
                 {
@@ -2086,9 +2233,9 @@
                     "language": "Finnish"
                 }
             ],
-            "väriä": [
+            "v\u00e4ri\u00e4": [
                 {
-                    "lemma": "väri",
+                    "lemma": "v\u00e4ri",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -2113,7 +2260,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "vaihtaa omena päärynään",
+        "sentence": "vaihtaa omena p\u00e4\u00e4ryn\u00e4\u00e4n",
         "words": {
             "vaihtaa": [
                 {
@@ -2161,9 +2308,9 @@
                     "language": "Finnish"
                 }
             ],
-            "päärynään": [
+            "p\u00e4\u00e4ryn\u00e4\u00e4n": [
                 {
-                    "lemma": "päärynä",
+                    "lemma": "p\u00e4\u00e4ryn\u00e4",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -2271,11 +2418,11 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Äiti on laittanut ruokaa kolmesta asti",
+        "sentence": "\u00c4iti on laittanut ruokaa kolmesta asti",
         "words": {
-            "Äiti": [
+            "\u00c4iti": [
                 {
-                    "lemma": "äiti",
+                    "lemma": "\u00e4iti",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -2430,7 +2577,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Onko miehesi ikinä antanut sinulle kukkia?",
+        "sentence": "Onko miehesi ikin\u00e4 antanut sinulle kukkia?",
         "words": {
             "Onko": [
                 {
@@ -2482,9 +2629,9 @@
                     "language": "Finnish"
                 }
             ],
-            "ikinä": [
+            "ikin\u00e4": [
                 {
-                    "lemma": "ikinä",
+                    "lemma": "ikin\u00e4",
                     "morphology": [
                         "Adv",
                         "<fin>",
@@ -2526,7 +2673,7 @@
             ],
             "sinulle": [
                 {
-                    "lemma": "sinä",
+                    "lemma": "sin\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -2678,7 +2825,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Oletko lukenut tämän kirjan?",
+        "sentence": "Oletko lukenut t\u00e4m\u00e4n kirjan?",
         "words": {
             "Oletko": [
                 {
@@ -2732,9 +2879,9 @@
                     "language": "Finnish"
                 }
             ],
-            "tämän": [
+            "t\u00e4m\u00e4n": [
                 {
-                    "lemma": "tämä",
+                    "lemma": "t\u00e4m\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -2753,7 +2900,7 @@
                     "language": "Finnish"
                 },
                 {
-                    "lemma": "tämä",
+                    "lemma": "t\u00e4m\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -2801,7 +2948,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Oletko jo syönyt lounasta?",
+        "sentence": "Oletko jo sy\u00f6nyt lounasta?",
         "words": {
             "Oletko": [
                 {
@@ -2847,9 +2994,9 @@
                     "language": "Finnish"
                 }
             ],
-            "syönyt": [
+            "sy\u00f6nyt": [
                 {
-                    "lemma": "syödä",
+                    "lemma": "sy\u00f6d\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -2899,7 +3046,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Olet myöhässä, me olemme jo aloittaneet.",
+        "sentence": "Olet my\u00f6h\u00e4ss\u00e4, me olemme jo aloittaneet.",
         "words": {
             "Olet": [
                 {
@@ -2926,9 +3073,9 @@
                     "language": "Finnish"
                 }
             ],
-            "myöhässä": [
+            "my\u00f6h\u00e4ss\u00e4": [
                 {
-                    "lemma": "myöhässä",
+                    "lemma": "my\u00f6h\u00e4ss\u00e4",
                     "morphology": [
                         "Adv",
                         "<fin>",
@@ -3039,7 +3186,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "He ovat varmasti kääntyneet väärään suuntaan.",
+        "sentence": "He ovat varmasti k\u00e4\u00e4ntyneet v\u00e4\u00e4r\u00e4\u00e4n suuntaan.",
         "words": {
             "He": [
                 {
@@ -3106,9 +3253,9 @@
                     "language": "Finnish"
                 }
             ],
-            "kääntyneet": [
+            "k\u00e4\u00e4ntyneet": [
                 {
-                    "lemma": "kääntyä",
+                    "lemma": "k\u00e4\u00e4nty\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -3131,9 +3278,9 @@
                     "language": "Finnish"
                 }
             ],
-            "väärään": [
+            "v\u00e4\u00e4r\u00e4\u00e4n": [
                 {
-                    "lemma": "väärä",
+                    "lemma": "v\u00e4\u00e4r\u00e4",
                     "morphology": [
                         "A",
                         "<fin>",
@@ -3180,11 +3327,11 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Minua on nukuttanut koko päivän.",
+        "sentence": "Minua on nukuttanut koko p\u00e4iv\u00e4n.",
         "words": {
             "Minua": [
                 {
-                    "lemma": "minä",
+                    "lemma": "min\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
@@ -3276,9 +3423,9 @@
                     "language": "Finnish"
                 }
             ],
-            "päivän": [
+            "p\u00e4iv\u00e4n": [
                 {
-                    "lemma": "päivä",
+                    "lemma": "p\u00e4iv\u00e4",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -3426,7 +3573,7 @@
         "folder": "101::LB-S1-L11"
     },
     {
-        "sentence": "Saanko mennä ulos? Olen tehnyt läksyni.",
+        "sentence": "Saanko menn\u00e4 ulos? Olen tehnyt l\u00e4ksyni.",
         "words": {
             "Saanko": [
                 {
@@ -3455,9 +3602,9 @@
                     "language": "Finnish"
                 }
             ],
-            "mennä": [
+            "menn\u00e4": [
                 {
-                    "lemma": "mennä",
+                    "lemma": "menn\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -3524,7 +3671,7 @@
             ],
             "tehnyt": [
                 {
-                    "lemma": "tehdä",
+                    "lemma": "tehd\u00e4",
                     "morphology": [
                         "V",
                         "<fin>",
@@ -3547,9 +3694,9 @@
                     "language": "Finnish"
                 }
             ],
-            "läksyni": [
+            "l\u00e4ksyni": [
                 {
-                    "lemma": "läksy",
+                    "lemma": "l\u00e4ksy",
                     "morphology": [
                         "N",
                         "<fin>",
@@ -4349,7 +4496,7 @@
             ],
             "sinua": [
                 {
-                    "lemma": "sinä",
+                    "lemma": "sin\u00e4",
                     "morphology": [
                         "Pron",
                         "<fin>",
