@@ -12,21 +12,22 @@ from tenacity import (
 )
 from tortoise import run_async
 from tortoise.functions import Count
-from model import LearningItem, SkipList, Analysis, Explanation  # Adjust the import path as necessary
+from model import LearningItem, SkipList, Analysis, Explanation, Lesson, Etymology  # Adjust the import path as necessary
 import db
 from progress_log import ProgressLog
+import argparse
 
 
-
+# Inpired by https://towardsdatascience.com/the-proper-way-to-make-calls-to-chatgpt-api-52e635bea8ff
 
 logger = logging.getLogger(__name__)
 
-instructions = """Der Finnish Language Expert analysiert finnische Wörter auf Deutsch und liefert das Ergebnis in einem spezifischen JSON-Format zurück. Als Input erhält er ein Wort, mögliche Begriffsklärungen mit Fallanalyse und ein Satz als Kontext. Für jedes analysierte Wort gibt er eine strukturierte JSON-Antwort zurück, die folgendes enthält:
+instructions = """Der Finnish Language Expert analysiert finnische Wörter auf Deutsch und liefert das Ergebnis in einem spezifischen JSON-Format zurück. Als Input erhält er ein Wort ('word'), mögliche Begriffsklärungen mit Fallanalyse ('disambiguations'), Etymologie ('etymology') und ein Satz ('sentence') als Kontext. Für jedes analysierte Wort gibt er eine strukturierte JSON-Antwort zurück, die folgendes enthält:
 - 'word' (das gegebene Wort), 
 - 'lemma' (die Grundform des Wortes), 
 - 'suffixes' (eine Liste mit Tupeln aus der im Wort verwendeten Endungen sowie deren Fälle und Bedeutung), 
 - 'meaning' (die Bedeutung des Wortes auf Deutsch) 
-- 'explanation' (Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt. ) 
+- 'explanation' (Erkläre in einem kurzen und knappen Satz das Wort im Kontext des angegeben Satzes 'sentence')
 - 'sample' (Beispielsatz mit dem analysierten Wort in Finnish und Deutsch. Nicht der im Kontext übermittelte Satz.)
 
 Dieses Format sorgt für eine klare und systematische Darstellung der linguistischen Analyse. Der Expert bleibt sachlich und direkt, mit einem neutralen Ton.
@@ -54,13 +55,19 @@ headers = {
     "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}"
 }
 
-    
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Let\'s OpenAI generate an explanation for the words in the learning items.')
+    parser.add_argument('folder', help='The folder of the lesson to process')
+    args = parser.parse_args()
+    return args
 
+explantion_detail = {
+    "Human": "Erkläre kurz und knapp das Wort im Kontext des Satzes.",
+    "Other": "Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt."
+}
 
 def get_query(learning_item):
     return f'{learning_item.native_text} {learning_item.translation}'
-
-
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), 
@@ -87,6 +94,10 @@ async def get_completion(word_data_with_context, session, semaphore, progress_lo
             "response_format" : {"type": "json_object"}
         }) as resp:
 
+            if resp.status != 200:
+                logger.error(f"Error: {resp.status}: {resp.text}")
+                return 
+
             response_json = await resp.json()
 
             return response_json["choices"][0]['message']["content"]
@@ -108,16 +119,23 @@ async def process_row(learning_item, session, semaphore, progress_log):
         analysis_by_index = await analysis.filter(index=index)
         word = analysis_by_index[0].word
 
-        if (await SkipList.filter(word=word).exists()):
+        skiplist = await SkipList.get_or_none(word=word)
+        if (skiplist is not None):
             continue
 
         word_data_with_context = {
             "sentence": learning_item.native_text,
             "word": word,
+            "etymology": "",
             "disambiguations": []
         }
 
+        lemma = ""
+
         for word_analysis in analysis_by_index:
+
+            if (lemma == ""):
+                lemma = word_analysis.lemma
 
             word_data_with_context["disambiguations"].append({
                 "lemma": word_analysis.lemma,
@@ -128,7 +146,13 @@ async def process_row(learning_item, session, semaphore, progress_log):
             })
 
 
+        entry = await Etymology.get_or_none(word=lemma)
+        if (entry is not None):
+            word_data_with_context["etymology"] = entry.description
+        
+
         logger.info(f'Explaining {word}')
+        logger.debug(word_data_with_context)
         progress_log.total += 1
         explanation = await get_completion(word_data_with_context, session, semaphore, progress_log)
 
@@ -148,13 +172,18 @@ async def process_row(learning_item, session, semaphore, progress_log):
 
 
 
-async def run_explain(max_parallel_calls, timeout):
+async def run_explain(folder, max_parallel_calls, timeout):
     
     await db.init() 
 
-    items_without_explanation = await LearningItem.annotate(
+    lesson = await Lesson.get_or_none(folder=folder)
+    if (lesson is None):
+        logger.error(f'Lesson {folder} not found')
+        return
+
+    items_without_explanation = await LearningItem.filter(lesson=lesson).annotate(
         explanation_count=Count('explanation')
-    ).filter(explanation_count=0).limit(5)
+    ).filter(explanation_count=0)
 
     semaphore = asyncio.Semaphore(value=max_parallel_calls)
     progress_log = ProgressLog(0)
@@ -164,4 +193,16 @@ async def run_explain(max_parallel_calls, timeout):
         await asyncio.gather(*tasks)
 
 
-run_async(run_explain(5, 60))
+
+def main():
+    args = parse_arguments()# Parse the command line arguments
+
+    # Use the 'input_file' argument
+    folder = args.folder
+    logger.info(f"Processing lesson: {folder}")
+
+    run_async(run_explain(folder, 5, 60))
+    
+
+if __name__ == "__main__":
+    main()

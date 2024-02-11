@@ -1,5 +1,6 @@
 Input/LB*
 media/**
+*.log.old
 
 
 # Byte-compiled / optimized / DLL files

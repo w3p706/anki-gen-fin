@@ -1,0 +1,31 @@
+{
+    "sentence": "Viivi, oletko harjannut hampaasi?",
+    "word": "Viivi",
+    "disambiguations": [
+        {
+            "lemma": "Viivi",
+            "weight": 0.0,
+            "analysis_label": "Subject, head verb to the right",
+            "labels": [
+                "Noun",
+                "Proper noun",
+                "Semantic class: Human",
+                "Singular",
+                "Nominative"
+            ],
+            "language": "Finnish"
+        },
+        {
+            "lemma": "Viivi",
+            "weight": 0.0,
+            "analysis_label": "Subject, head verb to the right",
+            "labels": [
+                "Noun",
+                "Proper noun",
+                "Singular",
+                "Nominative"
+            ],
+            "language": "Finnish"
+        }
+    ]
+}

@@ -5,7 +5,7 @@ from tortoise import run_async
 from tortoise.functions import Count
 import csv
 import logging
-from model import LearningItem, Analysis  # Adjust the import path as necessary
+from model import LearningItem, Analysis, AnalysisLabel
 import db
 import logger
 
@@ -19,56 +19,10 @@ cg = Cg3("fin")
 language_dict = {
     'fin': 'Finnish'
 }
-analysis_label_dict = {
-    # Example: '@X': 'Unknown analysis'
-}
-root_dict = {
-    # Example: 'N': 'Noun', 'Prop': 'Proper noun', ...
-}
 
 
 
-def get_root_lexc(file_path):
-    with open(file_path, 'r') as file:
-        file_content = file.read()
-
-    # Split the content into lines for easier processing
-    lines = file_content.splitlines()
-    extracted_data = []
-    
-    for line in lines:
-        if line.startswith('+'):
-            # Split line to get the first part until '!!' and the rest
-            parts = line.split('`@CODE@`:', 1)
-            if len(parts) == 2:
-                first_col_value = parts[0].split('!!')[0][1:].strip()  # Extract the value until '!!', remove '+'
-                # Extract the value after @CODE@: (trimming leading and trailing spaces)
-                second_col_value = parts[1].strip()
-                extracted_data.append((first_col_value, second_col_value))
-    
-    
-    dictionary = {}
-    for key, value in extracted_data:
-        if key not in dictionary:
-            dictionary[key] = value
-
-    return dictionary
-
-
-
-def read_analysis_labels(file_path):
-    dictionary = {}
-    with open(file_path, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            key = row[0]
-            value = row[1]
-            if key not in dictionary:
-                dictionary[key] = value
-    return dictionary
-
-
-def process_morphology(arr, language, analysis_label, root):
+async def process_morphology(arr):
     labels = []
     weight = 0
     analysis_label = ""
@@ -84,20 +38,20 @@ def process_morphology(arr, language, analysis_label, root):
                 language = language_dict[key]
             else:
                 language = key
-                print(f"Warning: '{item}' not found in language dictionary.")
+                logger.warn(f"Warning: '{item}' not found in language dictionary.")
         elif item.startswith('@'):
-            # Lookup in the analysis_label dictionary
-            if item in analysis_label_dict:
-                analysis_label = analysis_label_dict[item]
+            label = await AnalysisLabel.filter(label=item).first()
+            if label:
+                analysis_label = label.description
             else:
-                analysis_label = item
-                print(f"Warning: '{item}' not found in analysis_label dictionary.")
+                logger.warn(f"Warning: analytics label not found: '{item}'")
         else:
-            # Lookup in the root dictionary
-            if item in root:
-                labels.append(root[item])
+            label = await AnalysisLabel.filter(label=item).first()
+            if label:
+                labels.append(label.description)
             else:
-                print(f"Warning: '{item}' not found in root dictionary.")
+                logger.warn(f"Warning: analytics label not found: '{item}'")
+
 
     return weight, analysis_label, labels, language
 
@@ -109,7 +63,7 @@ async def disambiguate_sentence(leaning_item):
 
     tokens = tokenizer.words(leaning_item.native_text)
     leaning_item.tokenized = tokens
-    leaning_item.save()
+    await leaning_item.save()
 
     disambiguations = cg.disambiguate(tokens)
     for word, disambiguation in disambiguations:
@@ -118,7 +72,7 @@ async def disambiguate_sentence(leaning_item):
             if (possible_word.morphology[0] == 'Punct'):
                 continue
 
-            weight, analysis_label, labels, language = process_morphology(possible_word.morphology, language_dict, analysis_label_dict, root_dict)
+            weight, analysis_label, labels, language = await process_morphology(possible_word.morphology)
 
             word_analysis = {
                 "lemma": possible_word.lemma,
@@ -146,8 +100,6 @@ async def disambiguate_sentence(leaning_item):
 # https://kaikki.org/dictionary/Finnish/index.html
 # Glinda, Nicole, Charlotte, mathilda
 
-root_dict = get_root_lexc('root.lexc')
-analysis_label_dict = read_analysis_labels('analysis_label.csv')
 
 async def run_disambiguation():
     analysis_count = 0

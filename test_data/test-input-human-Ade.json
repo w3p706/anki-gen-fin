@@ -1,0 +1,31 @@
+{
+    "sentence": "Viivillä heiluu hammas.",
+    "word": "Viivillä",
+    "disambiguations": [
+        {
+            "lemma": "Viivi",
+            "weight": 0.0,
+            "analysis_label": "No analysis",
+            "labels": [
+                "Noun",
+                "Proper noun",
+                "Semantic class: Human",
+                "Singular",
+                "Adessive"
+            ],
+            "language": "Finnish"
+        },
+        {
+            "lemma": "Viivi",
+            "weight": 0.0,
+            "analysis_label": "No analysis",
+            "labels": [
+                "Noun",
+                "Proper noun",
+                "Singular",
+                "Adessive"
+            ],
+            "language": "Finnish"
+        }
+    ]
+}

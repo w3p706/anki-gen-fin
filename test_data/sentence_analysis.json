@@ -1,0 +1,4378 @@
+[
+    {
+        "sentence": "Viivi, oletko harjannut hampaasi?",
+        "words": {
+            "Viivi": [
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "harjannut": [
+                {
+                    "lemma": "harjata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hampaasi": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Nom",
+                        "PxSg2",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Nominative",
+                        "Second singular (yours)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Viivi, have you brushed your teeth?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Oletko käynyt vessassa?",
+        "words": {
+            "Oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "käynyt": [
+                {
+                    "lemma": "käydä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vessassa": [
+                {
+                    "lemma": "vessa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ine",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Inner Locative cases: Inessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Have you been to the bathroom?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Oletko vaihtanut yöpuvun?",
+        "words": {
+            "Oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vaihtanut": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "yöpuvun": [
+                {
+                    "lemma": "yöpuku",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Have you changed into your pajamas?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Hyvä. Mene sänkyyn, niin luen iltasadun.",
+        "words": {
+            "Hyvä": [
+                {
+                    "lemma": "hyvä",
+                    "morphology": [
+                        "A",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Adjective",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "Mene": [
+                {
+                    "lemma": "mennä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Imprt",
+                        "Sg2",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Imperative",
+                        "Second singular (your"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "sänkyyn": [
+                {
+                    "lemma": "sänky",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ill",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Illative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "niin": [
+                {
+                    "lemma": "niin",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "luen": [
+                {
+                    "lemma": "lukea",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "iltasadun": [
+                {
+                    "lemma": "satu",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "\"ilta",
+                    "morphology": [
+                        "N",
+                        "Sg",
+                        "Nom",
+                        "Cmp",
+                        "<W:0.000000>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": ""
+                }
+            ]
+        },
+        "translation": "Good. Go to bed, and I'll read you a bedtime story.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "iltasatu",
+        "words": {
+            "iltasatu": [
+                {
+                    "lemma": "satu",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "\"ilta",
+                    "morphology": [
+                        "N",
+                        "Sg",
+                        "Nom",
+                        "Cmp",
+                        "<W:0.000000>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": ""
+                }
+            ]
+        },
+        "translation": "bedtime story",
+        "sides": "Double",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "harjata",
+        "words": {
+            "harjata": [
+                {
+                    "lemma": "harjata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "InfA",
+                        "Sg",
+                        "Lat",
+                        "<W:0.000000>",
+                        "@-FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Non-finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "A infinitive (first)",
+                        "Singular",
+                        "Lative case"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to brush",
+        "sides": "Double",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "hammas",
+        "words": {
+            "hammas": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "tooth",
+        "sides": "Double",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to change, to exchange, to swap",
+        "sides": "Double",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "yöpuku",
+        "words": {
+            "yöpuku": [
+                {
+                    "lemma": "yöpuku",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "pajamas, nightdress",
+        "sides": "Double",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Viivillä heiluu hammas.",
+        "words": {
+            "Viivillä": [
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Adessive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Adessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "heiluu": [
+                {
+                    "lemma": "heilua",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hammas": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Viivi has a loose tooth",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Nainen harjaa hampaitaan.",
+        "words": {
+            "Nainen": [
+                {
+                    "lemma": "nainen",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "harjaa": [
+                {
+                    "lemma": "harjata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hampaitaan": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Par",
+                        "PxSg3",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Partitive",
+                        "Third singular (his)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "The woman brushes her teeth",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Käytkö sinä kaupassa, vai käynkö minä?",
+        "words": {
+            "Käytkö": [
+                {
+                    "lemma": "käydä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "sinä": [
+                {
+                    "lemma": "sinä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg2",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Second singular (your",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kaupassa": [
+                {
+                    "lemma": "kauppa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ine",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Inner Locative cases: Inessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vai": [
+                {
+                    "lemma": "vai",
+                    "morphology": [
+                        "CC",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Coordinating"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "käynkö": [
+                {
+                    "lemma": "käydä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "minä": [
+                {
+                    "lemma": "minä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg1",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Verbs: First singular (I)",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Will you go to the grocery store, or shall I go?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Anteeksi, missä täällä on vessa?",
+        "words": {
+            "Anteeksi": [
+                {
+                    "lemma": "anteeksi",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "missä": [
+                {
+                    "lemma": "missä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "täällä": [
+                {
+                    "lemma": "täällä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vessa": [
+                {
+                    "lemma": "vessa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@<SPRED"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject predicate,",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Excuse me, where is the restroom?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Minun täytyy vaihtaa rahaa ulkomaanmatkaa varten.",
+        "words": {
+            "Minun": [
+                {
+                    "lemma": "minä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg1",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Verbs: First singular (I)",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "täytyy": [
+                {
+                    "lemma": "täytyä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "InfA",
+                        "Sg",
+                        "Lat",
+                        "<W:0.000000>",
+                        "@-FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Non-finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "A infinitive (first)",
+                        "Singular",
+                        "Lative case"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "rahaa": [
+                {
+                    "lemma": "raha",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ulkomaanmatkaa": [
+                {
+                    "lemma": "ulkomaanmatka",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "varten": [
+                {
+                    "lemma": "varten",
+                    "morphology": [
+                        "Po",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Postposition"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "I need to exchange some money for a trip abroad.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Viivillä on muumiyöpuku.",
+        "words": {
+            "Viivillä": [
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Adessive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Viivi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Ade",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Adessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "muumiyöpuku": [
+                {
+                    "lemma": "yöpuku",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@<SPRED"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject predicate,",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "\"muumi",
+                    "morphology": [
+                        "N",
+                        "Sg",
+                        "Nom",
+                        "Cmp",
+                        "<W:0.000000>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": ""
+                }
+            ]
+        },
+        "translation": "Viivi has Moomin pajamas.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Siivooja petaa sängyn hotellihuoneessa.",
+        "words": {
+            "Siivooja": [
+                {
+                    "lemma": "siivooja",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "petaa": [
+                {
+                    "lemma": "petata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "pedata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "sängyn": [
+                {
+                    "lemma": "sänky",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hotellihuoneessa": [
+                {
+                    "lemma": "hotellihuone",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ine",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Inner Locative cases: Inessive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "The maid made the bed in a hotel room.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Lue tänään oikein pitkä iltasatu!",
+        "words": {
+            "Lue": [
+                {
+                    "lemma": "lukea",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Imprt",
+                        "Sg2",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Imperative",
+                        "Second singular (your"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tänään": [
+                {
+                    "lemma": "tänään",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "oikein": [
+                {
+                    "lemma": "oikein",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "pitkä": [
+                {
+                    "lemma": "pitkä",
+                    "morphology": [
+                        "A",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Adjective",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "iltasatu": [
+                {
+                    "lemma": "satu",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "\"ilta",
+                    "morphology": [
+                        "N",
+                        "Sg",
+                        "Nom",
+                        "Cmp",
+                        "<W:0.000000>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": ""
+                }
+            ]
+        },
+        "translation": "Please read a very long bedtime story today!",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa vaatteita",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vaatteita": [
+                {
+                    "lemma": "vaate",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to change clothes",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa työpaikkaa",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "työpaikkaa": [
+                {
+                    "lemma": "työpaikka",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to change jobs",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa tervehdyksiä",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tervehdyksiä": [
+                {
+                    "lemma": "tervehdys",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to exchange greetings",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa rahaa",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "rahaa": [
+                {
+                    "lemma": "raha",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to exchange money",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa patteri",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "patteri": [
+                {
+                    "lemma": "patteri",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to replace a battery",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa kahvi teehen",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kahvi": [
+                {
+                    "lemma": "kahvi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "teehen": [
+                {
+                    "lemma": "tee",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ill",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Illative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to start drinking tea instead of coffee",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa kymmenen euron seteli euron kolikoiksi",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kymmenen": [
+                {
+                    "lemma": "kymmenen",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Card",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Numerals",
+                        "Cardinal",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "kymmenen",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Numerals",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "euron": [
+                {
+                    "lemma": "euro",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "euro",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "seteli": [
+                {
+                    "lemma": "seteli",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kolikoiksi": [
+                {
+                    "lemma": "kolikko",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Tra",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Translative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to change a ten-euro note to one-euro coins",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa väriä",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "väriä": [
+                {
+                    "lemma": "väri",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to change color",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "vaihtaa omena päärynään",
+        "words": {
+            "vaihtaa": [
+                {
+                    "lemma": "vaihtaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "omena": [
+                {
+                    "lemma": "omena",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "päärynään": [
+                {
+                    "lemma": "päärynä",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ill",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Illative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "to swap an apple for a pear",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Oletko harjannut hampaasi?",
+        "words": {
+            "Oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "harjannut": [
+                {
+                    "lemma": "harjata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hampaasi": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Nom",
+                        "PxSg2",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Nominative",
+                        "Second singular (yours)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Have you brushed your teeth?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Äiti on laittanut ruokaa kolmesta asti",
+        "words": {
+            "Äiti": [
+                {
+                    "lemma": "äiti",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "laittanut": [
+                {
+                    "lemma": "laittaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ruokaa": [
+                {
+                    "lemma": "ruoka",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kolmesta": [
+                {
+                    "lemma": "kolme",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Card",
+                        "Sg",
+                        "Ela",
+                        "<W:0.000000>",
+                        "@N<"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the left",
+                    "labels": [
+                        "Numerals",
+                        "Cardinal",
+                        "Singular",
+                        "Elative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "kolme",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Sg",
+                        "Ela",
+                        "<W:0.000000>",
+                        "@N<"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the left",
+                    "labels": [
+                        "Numerals",
+                        "Singular",
+                        "Elative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "asti": [
+                {
+                    "lemma": "asti",
+                    "morphology": [
+                        "Po",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Postposition"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Mom has been cooking since three o'clock",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Onko miehesi ikinä antanut sinulle kukkia?",
+        "words": {
+            "Onko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "miehesi": [
+                {
+                    "lemma": "mies",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "PxSg2",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative",
+                        "Second singular (yours)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ikinä": [
+                {
+                    "lemma": "ikinä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "antanut": [
+                {
+                    "lemma": "antaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "sinulle": [
+                {
+                    "lemma": "sinä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg2",
+                        "All",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Second singular (your",
+                        "Allative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kukkia": [
+                {
+                    "lemma": "kukkia",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "InfA",
+                        "Sg",
+                        "Lat",
+                        "<W:0.000000>",
+                        "@-FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Non-finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "A infinitive (first)",
+                        "Singular",
+                        "Lative case"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "kukka",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Has your husband ever given you flowers?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Olen harjannut hampaani",
+        "words": {
+            "Olen": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "harjannut": [
+                {
+                    "lemma": "harjata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "hampaani": [
+                {
+                    "lemma": "hammas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Nom",
+                        "PxSg1",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Nominative",
+                        "Possessives: First singular (mine)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "I have brushed my teeth",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Oletko lukenut tämän kirjan?",
+        "words": {
+            "Oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "lukenut": [
+                {
+                    "lemma": "lukea",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tämän": [
+                {
+                    "lemma": "tämä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "tämä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Dem",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Demonstrative",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kirjan": [
+                {
+                    "lemma": "kirja",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Have you read this book?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Oletko jo syönyt lounasta?",
+        "words": {
+            "Oletko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "jo": [
+                {
+                    "lemma": "jo",
+                    "morphology": [
+                        "Pcle",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@PCLE"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "@PCLE",
+                    "labels": [
+                        "Particle, except:"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "syönyt": [
+                {
+                    "lemma": "syödä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "lounasta": [
+                {
+                    "lemma": "lounas",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Have you had lunch already?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Olet myöhässä, me olemme jo aloittaneet.",
+        "words": {
+            "Olet": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg2",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second singular (your"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "myöhässä": [
+                {
+                    "lemma": "myöhässä",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "me": [
+                {
+                    "lemma": "me",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Pl1",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "First plural (we)",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "olemme": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Pl1",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "First plural (we)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "jo": [
+                {
+                    "lemma": "jo",
+                    "morphology": [
+                        "Pcle",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@PCLE"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "@PCLE",
+                    "labels": [
+                        "Particle, except:"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "aloittaneet": [
+                {
+                    "lemma": "aloittaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "You're late, we've already started.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "He ovat varmasti kääntyneet väärään suuntaan.",
+        "words": {
+            "He": [
+                {
+                    "lemma": "he",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Pl3",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Third plural (thy)",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ovat": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Pl3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third plural (thy)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "varmasti": [
+                {
+                    "lemma": "varmasti",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kääntyneet": [
+                {
+                    "lemma": "kääntyä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "väärään": [
+                {
+                    "lemma": "väärä",
+                    "morphology": [
+                        "A",
+                        "<fin>",
+                        "Sg",
+                        "Ill",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Adjective",
+                        "Singular",
+                        "Illative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "suuntaan": [
+                {
+                    "lemma": "suunta",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Ill",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Illative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "They must have turned in the wrong direction.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Minua on nukuttanut koko päivän.",
+        "words": {
+            "Minua": [
+                {
+                    "lemma": "minä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg1",
+                        "Par",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Verbs: First singular (I)",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "nukuttanut": [
+                {
+                    "lemma": "nukuttaa",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "koko": [
+                {
+                    "lemma": "koko",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "päivän": [
+                {
+                    "lemma": "päivä",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "I've been sleepy all day.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Onko Tiina jo tullut?",
+        "words": {
+            "Onko": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "Tiina": [
+                {
+                    "lemma": "Tiina",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Tiina",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "jo": [
+                {
+                    "lemma": "jo",
+                    "morphology": [
+                        "Pcle",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@PCLE"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "@PCLE",
+                    "labels": [
+                        "Particle, except:"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tullut": [
+                {
+                    "lemma": "tulla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Has Tiina arrived already?",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Saanko mennä ulos? Olen tehnyt läksyni.",
+        "words": {
+            "Saanko": [
+                {
+                    "lemma": "saada",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "Qst",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)",
+                        "-kO: Question focus"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "mennä": [
+                {
+                    "lemma": "mennä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "InfA",
+                        "Sg",
+                        "Lat",
+                        "<W:0.000000>",
+                        "@-FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Non-finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "A infinitive (first)",
+                        "Singular",
+                        "Lative case"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ulos": [
+                {
+                    "lemma": "ulos",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "Olen": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tehnyt": [
+                {
+                    "lemma": "tehdä",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "läksyni": [
+                {
+                    "lemma": "läksy",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Gen",
+                        "PxSg1",
+                        "<W:0.000000>",
+                        "@<OBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Direct object, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Genitive",
+                        "Possessives: First singular (mine)"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "May I go out? I've done my homework.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Maiju on aina ollut kiltti lapsi.",
+        "words": {
+            "Maiju": [
+                {
+                    "lemma": "Maiju",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Maiju",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "aina": [
+                {
+                    "lemma": "aina",
+                    "morphology": [
+                        "Adv",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@ADVL"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Adverbial modifier",
+                    "labels": [
+                        "Adverb"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ollut": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kiltti": [
+                {
+                    "lemma": "kiltti",
+                    "morphology": [
+                        "A",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Adjective",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "lapsi": [
+                {
+                    "lemma": "lapsi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@<SPRED"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject predicate,",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Maiju has always been a well-behaved child.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Olen lainannut Kallelta rahaa.",
+        "words": {
+            "Olen": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg1",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Verbs: First singular (I)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "lainannut": [
+                {
+                    "lemma": "lainata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "Kallelta": [
+                {
+                    "lemma": "Kalle",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Abl",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Ablative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Kalle",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Geo",
+                        "Sg",
+                        "Abl",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Geographic",
+                        "Singular",
+                        "Ablative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Kalle",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Abl",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Ablative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "rahaa": [
+                {
+                    "lemma": "raha",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "I've borrowed some money from Kalle.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Erkki on pelannut salibandya kolme vuotta.",
+        "words": {
+            "Erkki": [
+                {
+                    "lemma": "Erkki",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Human",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Human",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Erkki",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Geo",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Geographic",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Erkki",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "on": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Sg3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third singular (he)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "pelannut": [
+                {
+                    "lemma": "pelata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@>N"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Noun modifier, head noun to the right",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "salibandya": [
+                {
+                    "lemma": "salibandya",
+                    "morphology": [
+                        "?",
+                        "<W:281474976710655.000000>"
+                    ],
+                    "weight": 281474976710655.0,
+                    "analysis_label": "",
+                    "labels": [],
+                    "language": ""
+                }
+            ],
+            "kolme": [
+                {
+                    "lemma": "kolme",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Card",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Numerals",
+                        "Cardinal",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "kolme",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Numerals",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "vuotta": [
+                {
+                    "lemma": "vuosi",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "Erkki has been playing floorball for three years.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Olette pelanneet jo kaksi tuntia.",
+        "words": {
+            "Olette": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Pl2",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Second plural (you)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "pelanneet": [
+                {
+                    "lemma": "pelata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "jo": [
+                {
+                    "lemma": "jo",
+                    "morphology": [
+                        "Pcle",
+                        "<fin>",
+                        "<W:0.000000>",
+                        "@PCLE"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "@PCLE",
+                    "labels": [
+                        "Particle, except:"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kaksi": [
+                {
+                    "lemma": "kaksi",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Card",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Numerals",
+                        "Cardinal",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "kaksi",
+                    "morphology": [
+                        "Num",
+                        "<fin>",
+                        "Sg",
+                        "Nom",
+                        "<W:0.000000>",
+                        "Cmpnd",
+                        "@X"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "No analysis",
+                    "labels": [
+                        "Numerals",
+                        "Singular",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "tuntia": [
+                {
+                    "lemma": "tunti",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Sg",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Noun",
+                        "Singular",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "You (all) have been playing for two hours already.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    },
+    {
+        "sentence": "Kissat ovat kaivanneet sinua.",
+        "words": {
+            "Kissat": [
+                {
+                    "lemma": "kissa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Kissa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Sem/Geo",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Semantic class: Geographic",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                },
+                {
+                    "lemma": "Kissa",
+                    "morphology": [
+                        "N",
+                        "<fin>",
+                        "Prop",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@SUBJ>"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the right",
+                    "labels": [
+                        "Noun",
+                        "Proper noun",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "ovat": [
+                {
+                    "lemma": "olla",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "Ind",
+                        "Prs",
+                        "Pl3",
+                        "<W:0.000000>",
+                        "@+FAUXV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite auxiliary verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "Common moods: Indicative",
+                        "Non-past (present)",
+                        "Third plural (thy)"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "kaivanneet": [
+                {
+                    "lemma": "kaivata",
+                    "morphology": [
+                        "V",
+                        "<fin>",
+                        "Act",
+                        "PrfPrc",
+                        "Pl",
+                        "Nom",
+                        "<W:0.000000>",
+                        "@+FMAINV"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Finite main verb",
+                    "labels": [
+                        "Verb",
+                        "Active voice",
+                        "NUT participle (first, perfect)",
+                        "Plural",
+                        "Nominative"
+                    ],
+                    "language": "Finnish"
+                }
+            ],
+            "sinua": [
+                {
+                    "lemma": "sinä",
+                    "morphology": [
+                        "Pron",
+                        "<fin>",
+                        "Pers",
+                        "Sg2",
+                        "Par",
+                        "<W:0.000000>",
+                        "@<SUBJ"
+                    ],
+                    "weight": 0.0,
+                    "analysis_label": "Subject, head verb to the left",
+                    "labels": [
+                        "Pronoun",
+                        "Personal",
+                        "Second singular (your",
+                        "Partitive"
+                    ],
+                    "language": "Finnish"
+                }
+            ]
+        },
+        "translation": "The cats have missed you.",
+        "sides": "Single",
+        "folder": "101::LB-S1-L11"
+    }
+]

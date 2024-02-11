@@ -1,0 +1,303 @@
+[
+    {
+        "word": "Sara",
+        "lemma": "Sara",
+        "suffixes": [],
+        "meaning": "Sara",
+        "explanation": "In diesem Kontext bezieht sich 'Sara' auf einen Vornamen. Es handelt sich um eine Person, die als Subjekt des Satzes handelt.",
+        "sample": {
+            "finnisch": "Sara k\u00e4velee koulusta kotiin.",
+            "deutsch": "Sara l\u00e4uft von der Schule nach Hause."
+        }
+    },
+    {
+        "word": "Virtasilla",
+        "lemma": "Virtanen",
+        "suffixes": [
+            {
+                "-illa": "adessiv; auf, bei, an"
+            }
+        ],
+        "meaning": "bei den Virtanens",
+        "explanation": "Das Wort 'Virtasilla' bezieht sich auf eine Lokation oder Position in Bezug auf die Familie oder den Haushalt der Personen mit dem Nachnamen 'Virtanen'.",
+        "sample": {
+            "finnisch": "Joulua vietettiin Virtasilla suuren p\u00f6yd\u00e4n \u00e4\u00e4ress\u00e4.",
+            "deutsch": "Weihnachten wurde bei den Virtanens am gro\u00dfen Tisch gefeiert."
+        }
+    },
+    {
+        "word": "Koiramme",
+        "lemma": "koira",
+        "suffixes": [
+            {
+                "-mme": "1. Person Plural possessivsuffix; unser"
+            }
+        ],
+        "meaning": "unser Hund",
+        "explanation": "Das Wort 'Koiramme' bezieht sich auf 'unseren Hund'. 'Koira' bedeutet 'Hund' und das Suffix '-mme' zeigt den Besitz in der ersten Person Plural, also unser Hund.",
+        "sample": {
+            "finnisch": "Koiramme leikkii ulkona.",
+            "deutsch": "Unser Hund spielt drau\u00dfen."
+        }
+    },
+    {
+        "word": "Milt\u00e4",
+        "lemma": "mik\u00e4",
+        "suffixes": [
+            {
+                "-lt\u00e4": "ablativ; von etwas weg, \u00fcber den Zustand oder die Art"
+            }
+        ],
+        "meaning": "wie, von was/sich anf\u00fchlen",
+        "explanation": "Das Wort 'Milt\u00e4' ist eine Fragewortkonstruktion auf Finnisch, die benutzt wird, um nach dem Gef\u00fchl, Zustand, oder der Art von etwas zu fragen. Es leitet sich vom Grundwort 'mik\u00e4' ab, das 'was' bedeutet. In diesem Kontext wird nach dem Gef\u00fchl der finnischen Sprache gefragt.",
+        "sample": {
+            "finnisch": "Milt\u00e4 uusi koti tuntuu?",
+            "deutsch": "Wie f\u00fchlt sich das neue Zuhause an?"
+        }
+    },
+    {
+        "word": "jo",
+        "lemma": "jo",
+        "suffixes": [],
+        "meaning": "bereits, schon",
+        "explanation": "Das finnische Wort 'jo' ist eine Partikel, die verwendet wird, um auszudr\u00fccken, dass etwas bereits geschehen ist, im Sinne von 'schon' oder 'bereits' im Deutschen.",
+        "sample": {
+            "finnisch": "H\u00e4n on jo kotona.",
+            "deutsch": "Er/Sie ist bereits zu Hause."
+        }
+    },
+    {
+        "word": "on",
+        "lemma": "olla",
+        "suffixes": [],
+        "meaning": "ist",
+        "explanation": "Das Wort 'on' ist eine Form des finnischen Verbs 'olla', das 'sein' bedeutet. In diesem Kontext steht es in der 3. Person Singular im Pr\u00e4sens Indikativ und bedeutet 'ist'. Es dr\u00fcckt die Existenz oder den Besitz aus.",
+        "sample": {
+            "finnisch": "P\u00f6yd\u00e4ll\u00e4 on kirja.",
+            "deutsch": "Auf dem Tisch ist ein Buch."
+        }
+    },
+    {
+        "word": "\u00c4lk\u00e4\u00e4",
+        "lemma": "ei",
+        "suffixes": [
+            {
+                "-k\u00e4\u00e4": "Imperativ; auffordernde Form, 2. Person Plural"
+            }
+        ],
+        "meaning": "nicht (ihr)",
+        "explanation": "Das Wort '\u00c4lk\u00e4\u00e4' ist eine Aufforderungsform des finnischen Verneinungsverbs 'ei', was 'nicht' bedeutet. In diesem Kontext wird es verwendet, um eine Gruppe von Personen aufzufordern, etwas nicht zu tun.",
+        "sample": {
+            "finnisch": "\u00c4lk\u00e4\u00e4 menk\u00f6 sinne.",
+            "deutsch": "Geht dort nicht hin."
+        }
+    },
+    {
+        "word": "joskus",
+        "lemma": "joskus",
+        "suffixes": [],
+        "meaning": "manchmal",
+        "explanation": "Das Wort 'joskus' ist ein Adverb im Finnischen und bedeutet 'manchmal'. Es gibt an, dass etwas nicht st\u00e4ndig, sondern nur zu bestimmten Zeiten oder in bestimmten F\u00e4llen geschieht.",
+        "sample": {
+            "finnisch": "Joskus sataa, vaikka aurinko paistaa.",
+            "deutsch": "Manchmal regnet es, obwohl die Sonne scheint."
+        }
+    },
+    {
+        "word": "unohtako",
+        "lemma": "unohtaa",
+        "suffixes": [
+            {
+                "-ko": "Imperativ; eine Aufforderung oder Bitte"
+            }
+        ],
+        "meaning": "nicht vergessen",
+        "explanation": "Das finnische Verb 'unohtaa' bedeutet 'vergessen'. In der Form 'unohtako' ist es im Imperativ und in der negativen Form verwendet, was einer Aufforderung oder einem Befehl entspricht, etwas nicht zu vergessen.",
+        "sample": {
+            "finnisch": "\u00c4lk\u00e4\u00e4 unohtako avaimianne.",
+            "deutsch": "Vergesst eure Schl\u00fcssel nicht."
+        }
+    },
+    {
+        "word": "kauhean",
+        "lemma": "kauhea",
+        "suffixes": [
+            {
+                "-an": "adverbiale Verwendung; verst\u00e4rkt die Bedeutung des nachfolgenden Adjektivs oder Adverbs"
+            }
+        ],
+        "meaning": "sehr, furchtbar",
+        "explanation": "Das finnische Wort 'kauhean' ist eine adverbiale Form von 'kauhea', was 'schrecklich' oder 'furchtbar' bedeutet. In diesem Kontext wird es verwendet, um die Menge der Katzen zu beschreiben und verleiht dem Satz eine Intensit\u00e4t, um zu betonen, dass es sehr viele sind.",
+        "sample": {
+            "finnisch": "H\u00e4nell\u00e4 on kauhean iso talo.",
+            "deutsch": "Er/Sie hat ein sehr gro\u00dfes Haus."
+        }
+    },
+    {
+        "word": "haukkua",
+        "lemma": "haukkua",
+        "suffixes": [
+            {
+                "-": "Infinitiv; Grundform des Verbs ohne spezifische Endung"
+            }
+        ],
+        "meaning": "bellen, beschimpfen",
+        "explanation": "In diesem Kontext bezieht sich das Wort 'haukkua' auf das Bellen eines Hundes. Es wird als Verb in der Grundform (Infinitiv) verwendet, was auf eine allgemeine T\u00e4tigkeit oder M\u00f6glichkeit hinweist.",
+        "sample": {
+            "finnisch": "Koira alkoi haukkua postinkantajaa.",
+            "deutsch": "Der Hund begann, den Brieftr\u00e4ger anzubellen."
+        }
+    },
+    {
+        "word": "tavaroitanne",
+        "lemma": "tavara",
+        "suffixes": [
+            {
+                "-oita": "partitiv Plural; eine unbestimmte Menge oder Teil eines Ganzen"
+            },
+            {
+                "-nne": "2. Person Plural possessivsuffix; euer"
+            }
+        ],
+        "meaning": "eure Sachen",
+        "explanation": "Das Wort 'tavara' bedeutet 'Sache' oder 'Gut'. In 'tavaroitanne' wird es im Partitiv Plural und mit einem Besitzanzeiger (Possessivsuffix) f\u00fcr die 2. Person Plural verwendet. Dies weist darauf hin, dass es sich um 'eure Sachen' oder 'G\u00fcter' handelt.",
+        "sample": {
+            "finnisch": "Muistakaa ottaa tavaroitanne mukaan l\u00e4htiess\u00e4nne.",
+            "deutsch": "Vergesst nicht, eure Sachen mitzunehmen, wenn ihr geht."
+        }
+    },
+    {
+        "word": "kissaa",
+        "lemma": "kissa",
+        "suffixes": [
+            {
+                "-aa": "partitiivi; Ausdruck von Unbestimmtheits- oder Teilaspekten"
+            }
+        ],
+        "meaning": "Katze (im Partitiv)",
+        "explanation": "Das Suffix '-aa' im Wort 'kissaa' wird im Finnischen genutzt, um den Partitiv zu bilden, was h\u00e4ufig f\u00fcr die Angabe von unbestimmten Mengen oder Objekten benutzt wird, die nicht als ganze Einheiten betrachtet werden. Dies unterstreicht, dass es sich um eine unbestimmte Menge von Katzen handelt.",
+        "sample": {
+            "finnisch": "Nainen adoptoi vanhan kissaa.",
+            "deutsch": "Die Frau adoptiert eine alte Katze."
+        }
+    },
+    {
+        "word": "muuten",
+        "lemma": "muuten",
+        "suffixes": [],
+        "meaning": "ansonsten",
+        "explanation": "Das finnische Wort 'muuten' wird als Adverb verwendet und bedeutet auf Deutsch 'ansonsten' oder 'sonst'. Es wird genutzt, um eine Alternative oder einen Kontrast zu dem vorher gesagten zu zeigen.",
+        "sample": {
+            "finnisch": "Muuten everything on kunnossa, mutta tarkistetaan viel\u00e4 akku.",
+            "deutsch": "Ansonsten ist alles in Ordnung, aber wir pr\u00fcfen noch die Batterie."
+        }
+    },
+    {
+        "word": "se",
+        "lemma": "se",
+        "suffixes": [],
+        "meaning": "es",
+        "explanation": "Das finnische Wort 'se' ist ein Pronomen, das in diesem Kontext als Demonstrativpronomen verwendet wird, um auf das Subjekt 'Koiramme' (unser Hund) zu verweisen. Es wird hier im Nominativ Singular verwendet und bezieht sich auf 'unseren Hund', welcher als 'es' im Deutschen \u00fcbersetzt wird.",
+        "sample": {
+            "finnisch": "Se on kaunis p\u00e4iv\u00e4.",
+            "deutsch": "Es ist ein sch\u00f6ner Tag."
+        }
+    },
+    {
+        "word": "k\u00e4ytt\u00e4ytyy",
+        "lemma": "k\u00e4ytt\u00e4yty\u00e4",
+        "suffixes": [
+            {
+                "-yy": "Indikativ; aussagen \u00fcber Tatsachen, hier: Pr\u00e4sens, 3. Person Singular; er/sie/es"
+            }
+        ],
+        "meaning": "verh\u00e4lt sich, benimmt sich",
+        "explanation": "Das Verb 'k\u00e4ytt\u00e4yty\u00e4' bezieht sich auf das Verhalten oder Benehmen eines Subjekts. In dem gegebenen Satz spricht es \u00fcber das Benehmen unseres Hundes, das in der Regel gut ist, auch wenn er manchmal etwas bellt.",
+        "sample": {
+            "finnisch": "Nuori koira oppii kuinka se k\u00e4ytt\u00e4ytyy vieraiden l\u00e4sn\u00e4 ollessa.",
+            "deutsch": "Der junge Hund lernt, wie er sich in Anwesenheit von G\u00e4sten verh\u00e4lt."
+        }
+    }
+    {
+        "word": "T\u00e4m\u00e4",
+        "lemma": "t\u00e4m\u00e4",
+        "suffixes": [],
+        "meaning": "dies,",
+        "explanation": "Das Wort 'T\u00e4m\u00e4' ist ein Demonstrativpronomen im Nominativ Singular. Es wird verwendet, um auf eine nahe Person, Sache oder Idee hinzuweisen, in diesem Fall auf das Essen.",
+        "sample": {
+            "finnisch": "T\u00e4m\u00e4 on hyv\u00e4\u00e4.",
+            "deutsch": "Dies ist gut."
+        }
+    },
+    {
+        "word": "P\u00e4\u00e4sen",
+        "lemma": "p\u00e4\u00e4st\u00e4",
+        "suffixes": [
+            {
+                "-en": "1. Person Singular; ich"
+            }
+        ],
+        "meaning": "ich komme heraus",
+        "explanation": "Das Wort 'P\u00e4\u00e4sen' kommt vom Verb 'p\u00e4\u00e4st\u00e4', was 'herauskommen', 'entkommen' oder 'fertig werden' auf Deutsch bedeutet. Im gegebenen Satz dr\u00fcckt es den Abschluss der Arbeit und das Verlassen der Arbeitsstelle aus.",
+        "sample": {
+            "finnisch": "P\u00e4\u00e4sen vihdoin lomalle ensi viikolla.",
+            "deutsch": "Ich komme endlich n\u00e4chste Woche in den Urlaub."
+        }
+    },
+    {
+        "word": "on",
+        "lemma": "olla",
+        "suffixes": [],
+        "meaning": "ist",
+        "explanation": "Das finnische Verb 'olla' bedeutet 'sein' oder 'sich befinden'. In diesem Satz wird es in der dritten Person Singular im Pr\u00e4sens verwendet, um einen Zustand oder eine Tatsache auszudr\u00fccken.",
+        "sample": {
+            "finnisch": "P\u00f6yt\u00e4 on iso.",
+            "deutsch": "Der Tisch ist gro\u00df."
+        }
+    },
+    {
+        "word": "t\u00f6ist\u00e4",
+        "lemma": "ty\u00f6",
+        "suffixes": [
+            {
+                "-ist\u00e4": "elatiivi; aus etwas heraus, von etwas weg"
+            }
+        ],
+        "meaning": "von der Arbeit",
+        "explanation": "Das finnische Wort 'ty\u00f6' bedeutet 'Arbeit' auf Deutsch. Die Endung '-ist\u00e4' in 't\u00f6ist\u00e4' gibt an, dass es im Elativ verwendet wird, was 'aus etwas heraus' oder 'von etwas weg' bedeutet.",
+        "sample": {
+            "finnisch": "Milloin sin\u00e4 p\u00e4\u00e4set t\u00f6ist\u00e4?",
+            "deutsch": "Wann kommst du von der Arbeit?"
+        }
+    },
+    {
+        "word": "tulista",
+        "lemma": "tulinen",
+        "suffixes": [
+            {
+                "-sta": "partitiivi; einen Teil von etwas, unbestimmte Menge"
+            }
+        ],
+        "meaning": "scharf, pikant",
+        "explanation": "Das finnische Adjektiv 'tulinen' bedeutet 'scharf' oder 'pikant' auf Deutsch und bezieht sich auf den Geschmack von Essen. Die Endung '-sta' im Wort 'tulista' steht im Partitiv, der in diesem Kontext eine bestimmte Qualit\u00e4t oder Eigenschaft von etwas ausdr\u00fcckt.",
+        "sample": {
+            "finnisch": "Pid\u00e4n tulisesta ruoasta.",
+            "deutsch": "Ich mag scharfes Essen."
+        }
+    },
+    {
+        "word": "maissa",
+        "lemma": "maa",
+        "suffixes": [
+            {
+                "-issa": "inessiv, Plural; etwa um, in der N\u00e4he von"
+            }
+        ],
+        "meaning": "ungef\u00e4hr um, etwa um",
+        "explanation": "In diesem Kontext wird 'maissa' als Adverb verwendet, das sich auf eine ungef\u00e4hre Zeit bezieht. Es leitet sich vom Plural des Substantivs 'maa' im Inessiv ab, hat hier jedoch die spezialisierte Bedeutung, eine ungenaue Zeitangabe zu kennzeichnen.",
+        "sample": {
+            "finnisch": "Saavun kotiin viiden maissa.",
+            "deutsch": "Ich komme gegen f\u00fcnf Uhr nach Hause."
+        }
+    },
+]

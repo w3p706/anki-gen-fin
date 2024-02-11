@@ -1,7 +1,7 @@
 import csv
 from tortoise import run_async
-from model import SkipList  # Adjust the import path as necessary
-import db
+from db.model import SkipList  # Adjust the import path as necessary
+import db.db
 import random
 import logging
 

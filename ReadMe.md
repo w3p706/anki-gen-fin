@@ -13,3 +13,9 @@ python -m uralicNLP.download --languages fin eng
 ```
 
 If you get compiler error, you have a architecture not built a wheel for by pyhfst. 
+
+
+https://tortoise.github.io/examples/basic.html
+
+
+# TODO: Docker Image

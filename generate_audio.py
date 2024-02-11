@@ -21,6 +21,7 @@ import random
 
 logger = logging.getLogger(__name__)
 
+# https://elevenlabs.io/
 # see voices_eleven_labs.json or https://api.elevenlabs.io/v1/voices
 # https://api.elevenlabs.io/v1/text-to-speech/XrExE9yKIg1WjnnlVkGX/stream?
 # {"text":"Kissat ovat kaivanneet sinua.","model_id":"eleven_multilingual_v2"}

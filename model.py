@@ -1,6 +1,8 @@
 from tortoise import fields, models
 from tortoise.contrib.pydantic import pydantic_model_creator
 
+# https://tortoise.github.io/
+
 class Lesson(models.Model):
     lesson_id = fields.IntField(pk=True)  # Primary Key
     name = fields.CharField(max_length=255)
@@ -49,6 +51,15 @@ class Explanation(models.Model):
 
 class SkipList(models.Model):
     word = fields.CharField(max_length=255)
+
+
+class AnalysisLabel(models.Model):
+    label = fields.CharField(max_length=255, unique=True)
+    description = fields.CharField(max_length=255)
+
+class Etymology(models.Model):
+    word = fields.CharField(max_length=255, unique=True)
+    description = fields.TextField()
 
 
 # Pydantic models for data validation and serialization (optional but useful)
