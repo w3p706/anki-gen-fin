@@ -18,7 +18,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["Test"]
+            "args": ["101::LB-S1-L11"]
         }
     ]
 }

@@ -20,6 +20,7 @@ class LearningItem(models.Model):
     tokenized = fields.JSONField(null=True)
     lesson = fields.ForeignKeyField('models.Lesson', related_name='learning_items')
     audio_file_name = fields.TextField(null=True)
+    anki_guid = fields.CharField(max_length=255, null=True)
 
     # Relationship with Analysis
     analysis = fields.ReverseRelation["Analysis"]

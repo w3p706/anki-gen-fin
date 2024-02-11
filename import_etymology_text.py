@@ -6,9 +6,11 @@ import logging
 import logger
 
 
-logger = logging.getLogger(__name__)
+# get file from here, its quite big: https://kaikki.org/dictionary/Finnish/kaikki.org-dictionary-Finnish.json (https://kaikki.org/dictionary/Finnish/index.html)
 
+logger = logging.getLogger(__name__)
 words = 0  # Initialize a counter to keep track of the number of words extracted
+
 keys = {}
 
 # Define a function to extract word and etymology_text from a file
@@ -55,10 +57,6 @@ async def run_import():
     file_path = 'base_data/kaikki.org-dictionary-Finnish.json'
     await extract_word_etymology(file_path)
     logger.info(f"Extracted {words} words")  
-
-
-
-
 
 
 run_async(run_import())

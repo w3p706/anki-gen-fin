@@ -1,6 +1,11 @@
 Input/LB*
 media/**
 *.log.old
+db.sqlite3.*
+base_data/kaikki.org-dictionary-Finnish.json
+.DS_Store
+apkg_out/*.apkg
+
 
 
 # Byte-compiled / optimized / DLL files

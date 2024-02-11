@@ -22,6 +22,12 @@ import argparse
 
 logger = logging.getLogger(__name__)
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description='Let\'s OpenAI generate an explanation for the words in the learning items.')
+    parser.add_argument('deck', help='The full name of the deck to process')
+    args = parser.parse_args()
+    return args
+
 instructions = """Der Finnish Language Expert analysiert finnische Wörter auf Deutsch und liefert das Ergebnis in einem spezifischen JSON-Format zurück. Als Input erhält er ein Wort ('word'), mögliche Begriffsklärungen mit Fallanalyse ('disambiguations'), Etymologie ('etymology') und ein Satz ('sentence') als Kontext. Für jedes analysierte Wort gibt er eine strukturierte JSON-Antwort zurück, die folgendes enthält:
 - 'word' (das gegebene Wort), 
 - 'lemma' (die Grundform des Wortes), 
@@ -55,16 +61,11 @@ headers = {
     "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}"
 }
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='Let\'s OpenAI generate an explanation for the words in the learning items.')
-    parser.add_argument('folder', help='The folder of the lesson to process')
-    args = parser.parse_args()
-    return args
-
-explantion_detail = {
-    "Human": "Erkläre kurz und knapp das Wort im Kontext des Satzes.",
-    "Other": "Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt."
-}
+# Ideea: depending on the word Type, we can request different explanation details from the AI
+# explantion_detail = {
+#     "Human": "Erkläre kurz und knapp das Wort im Kontext des Satzes.",
+#     "Other": "Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt."
+# }
 
 def get_query(learning_item):
     return f'{learning_item.native_text} {learning_item.translation}'
@@ -172,13 +173,13 @@ async def process_row(learning_item, session, semaphore, progress_log):
 
 
 
-async def run_explain(folder, max_parallel_calls, timeout):
+async def run_explain(deck, max_parallel_calls, timeout):
     
     await db.init() 
 
-    lesson = await Lesson.get_or_none(folder=folder)
+    lesson = await Lesson.get_or_none(folder=deck)
     if (lesson is None):
-        logger.error(f'Lesson {folder} not found')
+        logger.error(f'Deck "{deck}" not found')
         return
 
     items_without_explanation = await LearningItem.filter(lesson=lesson).annotate(
@@ -198,10 +199,10 @@ def main():
     args = parse_arguments()# Parse the command line arguments
 
     # Use the 'input_file' argument
-    folder = args.folder
-    logger.info(f"Processing lesson: {folder}")
+    deck = args.deck
+    logger.info(f"Processing lesson: {deck}")
 
-    run_async(run_explain(folder, 5, 60))
+    run_async(run_explain(deck, 5, 60))
     
 
 if __name__ == "__main__":

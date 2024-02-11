@@ -17,6 +17,7 @@ from model import LearningItem  # Adjust the import path as necessary
 import db
 from progress_log import ProgressLog
 import random    
+import uuid
 
 
 logger = logging.getLogger(__name__)
@@ -86,9 +87,14 @@ async def get_audio(item, session, semaphore, progress_log):
                 logger.error(f"Error: {resp.status}: {resp.text}")
                 return 
 
+            id = uuid.uuid4()
+            subfolder = str(id)[0]
 
-            filename = f"media/{item.learning_item_id}.mp3"
+            # Create subfolder if it doesn't exist
+            subfolder_path = os.path.join("media", subfolder)
+            os.makedirs(subfolder_path, exist_ok=True)
 
+            filename = os.path.join(subfolder_path, f"{id}.mp3")
 
             with open(filename, 'wb') as fd:
                 async for chunk in resp.content.iter_chunked(CHUNK_SIZE):
