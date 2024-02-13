@@ -4,7 +4,7 @@ media/**
 db.sqlite3.*
 base_data/kaikki.org-dictionary-Finnish.json
 .DS_Store
-apkg_out/*.apkg
+output/*.apkg
 
 
 

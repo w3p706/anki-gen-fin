@@ -1,6 +1,6 @@
 import csv
 from tortoise import run_async
-from model import AnalysisLabel  # Adjust the import path as necessary
+from .db import AnalysisLabel  # Adjust the import path as necessary
 import db
 import random
 import logging

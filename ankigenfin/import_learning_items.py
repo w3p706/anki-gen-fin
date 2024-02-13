@@ -1,41 +1,39 @@
 import csv
 from tortoise import run_async
-from model import Lesson, LearningItem  # Adjust the import path as necessary
-import db
+from .db import db_init, Lesson, LearningItem  # Adjust the import path as necessary
 import random
 import logging
-import argparse
 import logger
 
 logger = logging.getLogger(__name__)
 
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='Imports learning items from a CSV file into the database.')
-    parser.add_argument('input_file', help='CSV file with learning items to import into the database.')
-    args = parser.parse_args()
-    return args
-
-
 def get_or_generate_id():
-    # Generate a new id and save it
+    # Generate a new anki id and save it
     new_id = random.randrange(1 << 30, 1 << 31)
     return new_id
 
 async def import_csv_to_db(csv_file_path):
     logger.info(f'Import {csv_file_path}')    
-    rows_imported = 0  # Initialize the counter
+
+    lessons = []
+    rows_imported = {}
+    total_rows = 0
 
     with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
+
+        # check for the correct columns
+        required_columns = ['deck', 'Finnish', 'English', 'sides']
+        if not all(column in reader.fieldnames for column in required_columns):            
+            raise ValueError("Missing required columns in the CSV file.")
+
         for row in reader:
 
             if ("::" not in row['deck']):
-                lesson_info = row['deck']
                 lesson_name = row['deck']
             else:
                 lesson_info = row['deck'].split('::')
-                lesson_name = lesson_info[:1] if len(lesson_info) > 1 else None
+                lesson_name = lesson_info[-1] if len(lesson_info) > 1 else None
 
             # Create or get Lesson
             lesson, created = await Lesson.get_or_create(
@@ -44,15 +42,18 @@ async def import_csv_to_db(csv_file_path):
                     'lesson_id': get_or_generate_id(),
                     'name': lesson_name, 
                     'order': 0
-                }  # Adjust 'order' as needed
+                }  
             )
 
-            # Prepare LearningItem fields
+            if (not lesson.folder in rows_imported):
+                rows_imported[lesson.folder] = 0
+                lessons.append(lesson)
+
             is_double_sided = True if row['sides'] == 'Double' else False
 
             logger.debug(f'Importing {row["Finnish"]} - {row["English"]} to lesson {lesson.lesson_id}')
 
-            # Create LearningItem
+            # Create LearningItem in db
             entry, changed = await LearningItem.update_or_create(
                 lesson=lesson,
                 native_text=row['Finnish'],
@@ -62,28 +63,28 @@ async def import_csv_to_db(csv_file_path):
                 }
             )
 
+            total_rows += 1
             if (changed):
-                rows_imported += 1  # Increment the counter for each row imported
+                rows_imported[lesson.folder] += 1  
 
-    logger.info(f'{rows_imported} rows imported or updated')  # Log the number of rows imported
-
-
-async def run_import(input_file):
-    await db.init()  # Make sure you have an async init function to set up Tortoise ORM
-    await import_csv_to_db(input_file)
+    return lessons, rows_imported, total_rows
 
 
-def main():
-    args = parse_arguments()# Parse the command line arguments
+async def import_learning_items(input_file):
+    """
+    imports a file to the database, and returns the imported lessons
+    """
+    logger.info(f"Processing file: {input_file}")
+    await db_init()  
+    lessons, rows_imported, total_rows = await import_csv_to_db(input_file)
 
-    # Use the 'input_file' argument
-    input_file_path = args.input_file
-    logger.info(f"Processing file: {input_file_path}")
+    logger.info(f'A total {total_rows} in file.')
 
-    run_async(run_import(input_file_path))
-    
+    for key, value in rows_imported.items():
+        logger.info(f'Lesson {key}: {value} rows imported or updated')
 
-if __name__ == "__main__":
-    main()
+    return lessons, rows_imported, total_rows
+
+
 
 

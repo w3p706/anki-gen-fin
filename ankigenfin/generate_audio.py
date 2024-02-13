@@ -13,9 +13,8 @@ from tenacity import (
 )
 from tortoise import run_async
 from tortoise.functions import Count
-from model import LearningItem  # Adjust the import path as necessary
-import db
-from progress_log import ProgressLog
+from .db import db_init, LearningItem, Lesson  # Adjust the import path as necessary
+from .progress_log import ProgressLog
 import random    
 import uuid
 
@@ -81,11 +80,9 @@ async def get_audio(item, session, semaphore, progress_log):
                 "similarity_boost": 1.0,
               }
         }) as resp:
-            
 
             if resp.status != 200:
-                logger.error(f"Error: {resp.status}: {resp.text}")
-                return 
+                logger.error(f"Error: {resp.status}: {resp.reason} - {await resp.text()}")
 
             id = uuid.uuid4()
             subfolder = str(id)[0]
@@ -109,18 +106,30 @@ async def get_audio(item, session, semaphore, progress_log):
             logger.info(progress_log)
 
 
-async def run_explain(max_parallel_calls, timeout):
+async def generate_audio(deck, overwrite=False, all=False, max_parallel_calls = 2, timeout= 60):
     
-    await db.init() 
+    await db_init() 
 
-    items_without_audio = await LearningItem.filter(audio_file_name=None)
+    items = None
+    lesson = None
+
+    if (isinstance(deck, (int))):
+        lesson = await Lesson.get_or_none(lesson_id=deck)
+
+    if (lesson is None):
+        lesson = await Lesson.get_or_none(folder=deck)
+        
+    if (lesson is None):
+        logger.error(f'Deck "{deck}" not found')
+        return
+
+    items = await LearningItem.filter(lesson=lesson).filter(audio_file_name=None)
 
     semaphore = asyncio.Semaphore(value=max_parallel_calls)
-    progress_log = ProgressLog(len(items_without_audio))
+    progress_log = ProgressLog(len(items))
 
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(timeout)) as session:
-        tasks = [get_audio(item, session, semaphore, progress_log) for item in items_without_audio]
+        tasks = [get_audio(item, session, semaphore, progress_log) for item in items]
         await asyncio.gather(*tasks)
 
-
-run_async(run_explain(2, 60))            
+         

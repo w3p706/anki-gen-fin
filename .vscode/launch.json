@@ -19,6 +19,14 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "args": ["101::LB-S1-L11"]
+        },
+        {
+            "name": "Process",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["process","LB-S1-L16.csv"]
         }
     ]
 }

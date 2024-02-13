@@ -3,24 +3,19 @@ from uralicNLP import tokenizer
 from uralicNLP.cg3 import Cg3
 from tortoise import run_async
 from tortoise.functions import Count
+from tortoise.expressions import Q
 import csv
 import logging
-from model import LearningItem, Analysis, AnalysisLabel
-import db
+from .db import db_init, Lesson, LearningItem, Analysis, AnalysisLabel 
 import logger
-
 
 logger = logging.getLogger(__name__)
 
-
 cg = Cg3("fin")
-
 
 language_dict = {
     'fin': 'Finnish'
 }
-
-
 
 async def process_morphology(arr):
     labels = []
@@ -54,9 +49,6 @@ async def process_morphology(arr):
 
 
     return weight, analysis_label, labels, language
-
-
-
 
 
 async def disambiguate_sentence(leaning_item):
@@ -95,28 +87,33 @@ async def disambiguate_sentence(leaning_item):
                 )
 
 
-
-
-# https://kaikki.org/dictionary/Finnish/index.html
-# Glinda, Nicole, Charlotte, mathilda
-
-
-async def run_disambiguation():
+async def analyze(deck, overwrite=False, all=False):
     analysis_count = 0
-    await db.init() 
+    await db_init() 
 
-    items_without_analysis = await LearningItem.annotate(
+    items = None
+    lesson = None
+
+    if (isinstance(deck, (int))):
+        lesson = await Lesson.get_or_none(lesson_id=deck)
+
+    if (lesson is None):
+        lesson = await Lesson.get_or_none(folder=deck)
+        
+    if (lesson is None):
+        logger.error(f'Deck "{deck}" not found')
+        return
+
+    items = await LearningItem.filter(lesson=lesson).annotate(
         analysis_count=Count('analysis')
     ).filter(analysis_count=0)
 
-    for item in items_without_analysis:
+    for item in items:
         await disambiguate_sentence(item)
 
         analysis_count += 1
-        logger.info(f'Analysis for {analysis_count}/{len(items_without_analysis)} saved to database')
+        logger.info(f'Analysis for {analysis_count}/{len(items)} saved to database')
 
     # Log the analysis count
     logger.info(f'Total number of analyses performed: {analysis_count}')
 
-
-run_async(run_disambiguation())

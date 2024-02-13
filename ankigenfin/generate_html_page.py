@@ -1,7 +1,16 @@
-from typing import Union, List, Dict
-import urllib.parse
+"""
+This file generates an HTML page based on the data from a JSON file.
+The HTML page contains cards with word analysis results, including explanations and links.
+The generated HTML page is saved to a file.
+"""
+
 import json
-import generate_html
+from .generate_html import generate_html
+
+
+### ****OUTDATED*****
+### neeeds to be updated for use with the database
+
 
 # Pfad zur JSON-Datei
 file_path = 'word_analysis_results.json'
@@ -142,7 +151,7 @@ html_content = """<html><head>    <style>
 for item in json_data:
     if ("error" in item):
         continue
-    html_content += generate_html.create_html_for_word(item)
+    html_content += generate_html(item)
 html_content += "</div></body></html>"
 
 # Abspeichern des HTML-Inhalts in eine Datei

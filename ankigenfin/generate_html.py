@@ -37,7 +37,7 @@ def create_html_wiktionary_links(item):
 
 
 
-def create_html_for_word(item):
+def generate_html(item):
     """
     Erstellt einen HTML-String für ein Wort und seine Eigenschaften.
 
@@ -65,6 +65,11 @@ def create_html_for_word(item):
     if item.word != item.lemma:
         grundform = item.lemma
 
+
+    finnish_sample = item.explanation_detail['sample'].get('finnisch', None)
+    if (finnish_sample is None):
+        finnish_sample = item.explanation_detail['sample'].get('finnish', '---')
+
     html = f"""<div class="word-definition">
             <details>
                 <summary>
@@ -84,7 +89,7 @@ def create_html_for_word(item):
                 </div>
                 <div class="sample small">
                     <b>Beispiel:</b>
-                    <div>{item.explanation_detail['sample']['finnisch']}</div>
+                    <div>{finnish_sample}</div>
                     <div>{item.explanation_detail['sample']['deutsch']}</div>
                 </div>
             </details>

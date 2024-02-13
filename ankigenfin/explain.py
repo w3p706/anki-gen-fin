@@ -12,21 +12,13 @@ from tenacity import (
 )
 from tortoise import run_async
 from tortoise.functions import Count
-from model import LearningItem, SkipList, Analysis, Explanation, Lesson, Etymology  # Adjust the import path as necessary
-import db
-from progress_log import ProgressLog
-import argparse
+from .db import db_init, LearningItem, SkipList, Analysis, Explanation, Lesson, Etymology  # Adjust the import path as necessary
+from .progress_log import ProgressLog
 
 
 # Inpired by https://towardsdatascience.com/the-proper-way-to-make-calls-to-chatgpt-api-52e635bea8ff
 
 logger = logging.getLogger(__name__)
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='Let\'s OpenAI generate an explanation for the words in the learning items.')
-    parser.add_argument('deck', help='The full name of the deck to process')
-    args = parser.parse_args()
-    return args
 
 instructions = """Der Finnish Language Expert analysiert finnische Wörter auf Deutsch und liefert das Ergebnis in einem spezifischen JSON-Format zurück. Als Input erhält er ein Wort ('word'), mögliche Begriffsklärungen mit Fallanalyse ('disambiguations'), Etymologie ('etymology') und ein Satz ('sentence') als Kontext. Für jedes analysierte Wort gibt er eine strukturierte JSON-Antwort zurück, die folgendes enthält:
 - 'word' (das gegebene Wort), 
@@ -120,7 +112,7 @@ async def process_row(learning_item, session, semaphore, progress_log):
         analysis_by_index = await analysis.filter(index=index)
         word = analysis_by_index[0].word
 
-        skiplist = await SkipList.get_or_none(word=word)
+        skiplist = await SkipList.get_or_none(word=word.lower())
         if (skiplist is not None):
             continue
 
@@ -149,7 +141,10 @@ async def process_row(learning_item, session, semaphore, progress_log):
 
         entry = await Etymology.get_or_none(word=lemma)
         if (entry is not None):
-            word_data_with_context["etymology"] = entry.description
+            # only add if it not contains 'proto-finnic' these are not helpful
+            if entry.description.lower().find('proto-finnic') == -1:
+                word_data_with_context["etymology"] = entry.description
+                
         
 
         logger.info(f'Explaining {word}')
@@ -173,16 +168,24 @@ async def process_row(learning_item, session, semaphore, progress_log):
 
 
 
-async def run_explain(deck, max_parallel_calls, timeout):
+async def explain(deck, overwrite=False, all=False, max_parallel_calls=5, timeout=60):
     
-    await db.init() 
+    await db_init() 
 
-    lesson = await Lesson.get_or_none(folder=deck)
+    items = None
+    lesson = None
+
+    if (isinstance(deck, (int))):
+        lesson = await Lesson.get_or_none(lesson_id=deck)
+
+    if (lesson is None):
+        lesson = await Lesson.get_or_none(folder=deck)
+        
     if (lesson is None):
         logger.error(f'Deck "{deck}" not found')
         return
 
-    items_without_explanation = await LearningItem.filter(lesson=lesson).annotate(
+    items = await LearningItem.filter(lesson=lesson).annotate(
         explanation_count=Count('explanation')
     ).filter(explanation_count=0)
 
@@ -190,20 +193,8 @@ async def run_explain(deck, max_parallel_calls, timeout):
     progress_log = ProgressLog(0)
 
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(timeout)) as session:
-        tasks = [process_row(item, session, semaphore, progress_log) for item in items_without_explanation]
+        tasks = [process_row(item, session, semaphore, progress_log) for item in items]
         await asyncio.gather(*tasks)
 
 
 
-def main():
-    args = parse_arguments()# Parse the command line arguments
-
-    # Use the 'input_file' argument
-    deck = args.deck
-    logger.info(f"Processing lesson: {deck}")
-
-    run_async(run_explain(deck, 5, 60))
-    
-
-if __name__ == "__main__":
-    main()

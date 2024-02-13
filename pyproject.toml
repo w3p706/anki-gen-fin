@@ -1,4 +1,4 @@
 [tool.aerich]
 tortoise_orm = "db.TORTOISE_ORM"
-location = "./migrations"
-src_folder = "./."
+location = "./ankigenfin/db/migrations"
+src_folder = "./ankigenfin/db/."

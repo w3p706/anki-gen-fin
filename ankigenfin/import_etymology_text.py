@@ -1,12 +1,18 @@
 import json
 from tortoise import run_async
-from model import Etymology  # Adjust the import path as necessary
+from .db import Etymology  # Adjust the import path as necessary
 import db
 import logging
 import logger
 
 
 # get file from here, its quite big: https://kaikki.org/dictionary/Finnish/kaikki.org-dictionary-Finnish.json (https://kaikki.org/dictionary/Finnish/index.html)
+
+# clean up with
+# UPDATE etymology 
+# SET description  = SUBSTR(description , 8)
+# WHERE description LIKE 'table%';
+
 
 logger = logging.getLogger(__name__)
 words = 0  # Initialize a counter to keep track of the number of words extracted

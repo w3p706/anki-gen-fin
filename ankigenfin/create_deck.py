@@ -1,25 +1,16 @@
-import generate_html
+from .generate_html import generate_html
 import genanki
 import os
 import logging
 import logger
 from tortoise import run_async
 from tortoise.functions import Count
-from model import LearningItem, SkipList, Analysis, Explanation, Lesson, Etymology  # Adjust the import path as necessary
-import db
-from progress_log import ProgressLog
-import argparse 
+from .db import db_init, LearningItem, Explanation, Lesson   # Adjust the import path as necessary
 import uuid
 
 
 logger = logging.getLogger(__name__)
 
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(description='creates a deck, from the audio file and the word analysis results')
-    parser.add_argument('deck', help='The full name of the deck to process')
-    args = parser.parse_args()
-    return args
 
 my_model = genanki.Model(
   1865967360,
@@ -194,7 +185,7 @@ async def write_deck(learingitems, file_path):
     
         html = ""
         for word in explanations:
-            html += generate_html.create_html_for_word(word) or ""
+            html += generate_html(word) or ""
 
         has_reverse = ""
 
@@ -227,31 +218,25 @@ async def write_deck(learingitems, file_path):
     logger.info(f'File written: {file_path}')
 
 
-async def generate_apgk(deck):
+async def create_deck(deck, out_file):
+    logger.info(f"Processing Deck: {deck}")
     
-    await db.init() 
+    await db_init() 
 
-    lesson = await Lesson.get_or_none(folder=deck)
+    items = None
+    lesson = None
+
+    if (isinstance(deck, (int))):
+        lesson = await Lesson.get_or_none(lesson_id=deck)
+
+    if (lesson is None):
+        lesson = await Lesson.get_or_none(folder=deck)
+        
     if (lesson is None):
         logger.error(f'Deck "{deck}" not found')
         return
 
     items = await LearningItem.filter(lesson=lesson)
 
-    filename = os.path.join("apkg_out", deck.replace(':', '_') + '.apkg')
+    await write_deck(items, out_file)
 
-    await write_deck(items, filename)
-
-
-def main():
-    args = parse_arguments()# Parse the command line arguments
-
-    # Use the 'input_file' argument
-    deck = args.deck
-    logger.info(f"Processing Deck: {deck}")
-
-    run_async(generate_apgk(deck))
-    
-
-if __name__ == "__main__":
-    main()
