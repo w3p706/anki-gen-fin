@@ -66,9 +66,8 @@ def generate_html(item):
         grundform = item.lemma
 
 
-    finnish_sample = item.explanation_detail['sample'].get('finnisch', None)
-    if (finnish_sample is None):
-        finnish_sample = item.explanation_detail['sample'].get('finnish', '---')
+    sample_target_language = item.explanation_detail['sample'].get('target-language', None)
+    sample_translation = item.explanation_detail['sample'].get('translation', None)
 
     html = f"""<div class="word-definition">
             <details>
@@ -89,8 +88,8 @@ def generate_html(item):
                 </div>
                 <div class="sample small">
                     <b>Beispiel:</b>
-                    <div>{finnish_sample}</div>
-                    <div>{item.explanation_detail['sample']['deutsch']}</div>
+                    <div>{sample_target_language}</div>
+                    <div>{sample_translation}</div>
                 </div>
             </details>
         </div>"""

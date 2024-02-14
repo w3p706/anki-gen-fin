@@ -102,6 +102,7 @@ my_model = genanki.Model(
 
         .suffix {
             flex: 0 0 15%;
+            margin-right: 10px;
         }
 
         .suffix-def {
@@ -159,10 +160,6 @@ my_model = genanki.Model(
             border: initial;
         }
 
-        .replay-button svg {
-            width: 24px;
-            height: 24px
-        }
 
 """,)
 

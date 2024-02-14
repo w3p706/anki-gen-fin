@@ -2,6 +2,9 @@ import os
 import logging
 import logger
 import json
+import jsonschema
+from jsonschema import validate
+from jsonschema.exceptions import ValidationError
 import asyncio
 import aiohttp
 from tenacity import (
@@ -26,7 +29,7 @@ instructions = """Der Finnish Language Expert analysiert finnische Wörter auf D
 - 'suffixes' (eine Liste mit Tupeln aus der im Wort verwendeten Endungen sowie deren Fälle und Bedeutung), 
 - 'meaning' (die Bedeutung des Wortes auf Deutsch) 
 - 'explanation' (Erkläre in einem kurzen und knappen Satz das Wort im Kontext des angegeben Satzes 'sentence')
-- 'sample' (Beispielsatz mit dem analysierten Wort in Finnish und Deutsch. Nicht der im Kontext übermittelte Satz.)
+- 'sample' (Beispielsatz mit dem analysierten Wort in Finnisch (key target-language) und Deutsch (key translation). Nicht der im Kontext übermittelte Satz.)
 
 Dieses Format sorgt für eine klare und systematische Darstellung der linguistischen Analyse. Der Expert bleibt sachlich und direkt, mit einem neutralen Ton.
 
@@ -42,8 +45,8 @@ Beispiel:
   "meaning": "in seinem/ihrem Film",
   "explanation": "Das finnische Wort 'elokuva' bedeutet 'Film' oder 'Kino' auf Deutsch. Es setzt sich aus zwei Teilen zusammen: „elo“ und „kuva“.\n'Elo': Dieser Teil des Wortes stammt von „elämä“, was „Leben“ bedeutet. Es bezieht sich auf etwas Lebendiges oder Dynamisches.\n'Kuva': Dieser Teil bedeutet 'Bild' oder 'Abbildung'.", 
   "sample": {
-    "finnisch": "Ohjaaja esitteli uusia teemoja elokuvassaan.",
-    "deutsch": "Der Regisseur stellte neue Themen in seinem Film vor."
+    "target-language": "Ohjaaja esitteli uusia teemoja elokuvassaan.",
+    "translation": "Der Regisseur stellte neue Themen in seinem Film vor."
   }
 }"""
 
@@ -53,21 +56,28 @@ headers = {
     "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}"
 }
 
-# Ideea: depending on the word Type, we can request different explanation details from the AI
+# Idea: depending on the word Type, we can request different explanation details from the AI
+# Or Maybe use 2-Shot-Mode to ask for the explantion in a second request
 # explantion_detail = {
 #     "Human": "Erkläre kurz und knapp das Wort im Kontext des Satzes.",
 #     "Other": "Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt."
 # }
 
-def get_query(learning_item):
-    return f'{learning_item.native_text} {learning_item.translation}'
+schema_file_path = "ankigenfin/gpt-out.schema.json"
 
+def load_json_schema():
+    """
+    Load the JSON Schema from a file.
+    """
+    with open(schema_file_path, 'r') as file:
+        schema = json.load(file)
+    return schema
 
 @retry(wait=wait_random_exponential(min=1, max=60), 
        stop=stop_after_attempt(20), 
        before_sleep=before_sleep_log(logger, logging.INFO), 
        retry_error_callback=lambda _: None)
-async def get_completion(word_data_with_context, session, semaphore, progress_log):
+async def get_completion(word_data_with_context, session, semaphore, schema):
 
     word_data_with_context_str = str(word_data_with_context)
     async with semaphore:
@@ -92,11 +102,15 @@ async def get_completion(word_data_with_context, session, semaphore, progress_lo
                 return 
 
             response_json = await resp.json()
+            json_fragment_of_intrest = json.loads(response_json["choices"][0]['message']["content"])
 
-            return response_json["choices"][0]['message']["content"]
+            # we need to validate the response to detect brainwaves or fantasy of the AI
+            validate(instance=json_fragment_of_intrest, schema=schema)
+
+            return json_fragment_of_intrest
 
 
-async def process_row(learning_item, session, semaphore, progress_log):
+async def process_row(learning_item, session, semaphore, progress_log, schema):
 
     order = 0
 
@@ -150,13 +164,11 @@ async def process_row(learning_item, session, semaphore, progress_log):
         logger.info(f'Explaining {word}')
         logger.debug(word_data_with_context)
         progress_log.total += 1
-        explanation = await get_completion(word_data_with_context, session, semaphore, progress_log)
-
-        json_explanation = json.loads(explanation)
+        explanation = await get_completion(word_data_with_context, session, semaphore, schema)
 
         explained = Explanation(
             word=word.lower(), 
-            lemma=json_explanation["lemma"],
+            lemma=explanation["lemma"],
             explanation_detail=explanation, 
             learning_item=learning_item, 
             index=index)    
@@ -189,11 +201,13 @@ async def explain(deck, overwrite=False, all=False, max_parallel_calls=5, timeou
         explanation_count=Count('explanation')
     ).filter(explanation_count=0)
 
+    schema = load_json_schema()
+
     semaphore = asyncio.Semaphore(value=max_parallel_calls)
     progress_log = ProgressLog(0)
 
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(timeout)) as session:
-        tasks = [process_row(item, session, semaphore, progress_log) for item in items]
+        tasks = [process_row(item, session, semaphore, progress_log, schema) for item in items]
         await asyncio.gather(*tasks)
 
 

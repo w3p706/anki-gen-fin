@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "word": {
+      "type": "string"
+    },
+    "lemma": {
+      "type": "string"
+    },
+    "suffixes": {
+      "type": "array",
+      "items": {
+          "type": "object"
+        }
+        
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "sample": {
+      "type": "object",
+      "properties": {
+        "target-language": {
+          "type": "string"
+        },
+        "translation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "target-language",
+        "translation"
+      ]
+    }
+  },
+  "required": [
+    "word",
+    "lemma",
+    "suffixes",
+    "meaning",
+    "explanation",
+    "sample"
+  ]
+}
