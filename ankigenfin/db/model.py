@@ -15,7 +15,8 @@ class Lesson(models.Model):
 class LearningItem(models.Model):
     learning_item_id = fields.IntField(pk=True)  # Primary Key
     native_text = fields.TextField()
-    translation = fields.TextField()
+    translation = fields.TextField(null=True)
+    translation_machine = fields.TextField(null=True)
     is_default_double_sided = fields.BooleanField()
     tokenized = fields.JSONField(null=True)
     lesson = fields.ForeignKeyField('models.Lesson', related_name='learning_items')

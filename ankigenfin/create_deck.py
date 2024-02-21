@@ -193,9 +193,13 @@ async def write_deck(learingitems, file_path):
             item.anki_guid = genanki.guid_for(uuid.uuid4())
             await item.save()
 
+        translation = item.translation
+        if (item.translation_machine is not None):
+            translation += f" / {item.translation_machine}"
+
         my_note = genanki.Note(
             model=my_model,
-            fields=[item.native_text, item.translation, html, has_reverse, f"[sound:{audio_file_basename}]"],
+            fields=[item.native_text, f"{translation}" , html, has_reverse, f"[sound:{audio_file_basename}]"],
             guid=item.anki_guid)
         
         lesson = await Lesson.get(lesson_id=item.lesson_id)

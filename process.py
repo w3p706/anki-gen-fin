@@ -40,6 +40,7 @@ async def process(input_path):
         await ankigenfin.analyze(deck.lesson_id)
         await ankigenfin.explain(deck.lesson_id)
         await ankigenfin.generate_audio(deck.lesson_id)
+        await ankigenfin.translate(deck.lesson_id)
         output = get_absolute_path(OUTPUT_DIR, deck.folder.replace(':', '_') + '.apkg', check_exists=False)
         await ankigenfin.create_deck(deck.lesson_id, output)
     
@@ -84,6 +85,8 @@ async def translate_deck(deck, overwrite=False):
     Translate a deck, optionally overwriting existing translation data.
     """
     logger.info(f"Translating deck {deck}{' with overwrite' if overwrite else ''}")
+    await ankigenfin.translate(deck, overwrite)
+
 
 
 async def export_as_apkg(deck, out_file):
