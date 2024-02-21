@@ -23,7 +23,7 @@ async def import_csv_to_db(csv_file_path):
         reader = csv.DictReader(csvfile)
 
         # check for the correct columns
-        required_columns = ['deck', 'Finnish', 'English', 'sides']
+        required_columns = ['deck', 'item', 'translation', 'sides']
         if not all(column in reader.fieldnames for column in required_columns):            
             raise ValueError("Missing required columns in the CSV file.")
 
@@ -51,14 +51,14 @@ async def import_csv_to_db(csv_file_path):
 
             is_double_sided = True if row['sides'] == 'Double' else False
 
-            logger.debug(f'Importing {row["Finnish"]} - {row["English"]} to lesson {lesson.lesson_id}')
+            logger.debug(f'Importing {row["item"]} - {row["translation"]} to lesson {lesson.lesson_id}')
 
             # Create LearningItem in db
             entry, changed = await LearningItem.update_or_create(
                 lesson=lesson,
-                native_text=row['Finnish'],
+                native_text=row['item'],
                 defaults=  {
-                    'translation':row['English'],
+                    'translation':row['translation'],
                     'is_default_double_sided': is_double_sided,
                 }
             )

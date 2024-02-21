@@ -11,6 +11,12 @@ import string
 
 logger = logging.getLogger(__name__)
 
+### for this to work the following must be inproved:
+### words which are not explained, but are in the learning items, should be counted as explained (SkipList)
+### analysed words, that have multiple version must only be counted as one
+### to match the tokenized array to words & analysis is currently only possible with a small hack (see line 39)
+
+
 
 schema_file_path = "ankigenfin/gpt-out.schema.json"
 
