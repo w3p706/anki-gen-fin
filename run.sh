@@ -1,0 +1,1 @@
+docker run  --rm --env-file ./.env -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output -v $(pwd)/media:/app/media anki-gen-fin python3 process.py process LB-S1-L17.csv

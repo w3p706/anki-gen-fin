@@ -30,7 +30,7 @@ CHUNK_SIZE = 1024
 
 voice_ids = [
         # ["z9fAnlkpzviPz146aGWa", "Glinda"], 
-        ["piTKgcLEGmPE4e6mEKli", "Nicole"], 
+        # ["piTKgcLEGmPE4e6mEKli", "Nicole"], # this voice is sometimes weird
         ["XrExE9yKIg1WjnnlVkGX", "Matilda"], 
         ["XB0fDUnXU5powFXDhCwa", "Charlotte"],
         ["AZnzlk1XvdvUeBnXmlld", "Domi"],

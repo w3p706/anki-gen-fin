@@ -101,9 +101,5 @@ https://tortoise.github.io/examples/basic.html
 - Licence https://choosealicense.com/
   Of course, you are also free to publish code without a license, but this would prevent many people from potentially using or contributing to your code.
 - References urlaicNLP, Kaikki (wikidictionary),
-
-
-# DeepL API
-# Language Pair by configuration
-
-# https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Finnish
+- Language Pair by configuration
+- https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists/Finnish

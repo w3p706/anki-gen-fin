@@ -8,8 +8,8 @@ import os
 
 logger = logging.getLogger(__name__)
 
-INPUT_DIR = "/workspaces/anki-gen-fin/input"
-OUTPUT_DIR = "/workspaces/anki-gen-fin/output"
+INPUT_DIR = "input"
+OUTPUT_DIR = "output"
 
 
 def get_absolute_path(input_dir, provided_path, check_exists=True):
