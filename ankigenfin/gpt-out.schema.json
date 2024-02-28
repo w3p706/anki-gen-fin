@@ -1,5 +1,6 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "This structure is used to represent a GPT-answer to a word in a language, with its meaning and an example of usage.",
   "type": "object",
   "properties": {
     "word": {

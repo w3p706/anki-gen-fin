@@ -6,10 +6,14 @@ from tortoise import run_async
 import sys
 import os
 
+
+
 logger = logging.getLogger(__name__)
 
 INPUT_DIR = "input"
 OUTPUT_DIR = "output"
+
+config = ankigenfin.config("config.yml")
 
 
 def get_absolute_path(input_dir, provided_path, check_exists=True):
@@ -22,10 +26,6 @@ def get_absolute_path(input_dir, provided_path, check_exists=True):
         return absolute_path
     else:
         raise FileNotFoundError(f"Path {absolute_path} does not exist.")
-
-
-
-
 
 
 
@@ -85,7 +85,10 @@ async def translate_deck(deck, overwrite=False):
     Translate a deck, optionally overwriting existing translation data.
     """
     logger.info(f"Translating deck {deck}{' with overwrite' if overwrite else ''}")
-    await ankigenfin.translate(deck, overwrite)
+    if config.machine_translation.use_deepl:
+        await ankigenfin.translate_deepl(config, deck, overwrite)
+    if config.machine_translation.use_gpt:
+        await ankigenfin.translate_gpt(config, deck, overwrite)
 
 
 

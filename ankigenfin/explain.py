@@ -19,6 +19,7 @@ from .db import db_init, LearningItem, SkipList, Analysis, Explanation, Lesson, 
 from .progress_log import ProgressLog
 
 
+
 # Inpired by https://towardsdatascience.com/the-proper-way-to-make-calls-to-chatgpt-api-52e635bea8ff
 
 logger = logging.getLogger(__name__)

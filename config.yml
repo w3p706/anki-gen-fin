@@ -1,0 +1,24 @@
+language_to_learn: 
+  fullname: Finnisch
+  shortname: fi
+
+
+
+
+# you can use deepl or gpt for machine translation
+# deepl is cheaper and faster, but gpt is more accurate
+# if you use gpt, you can choose the model, and adjust the prompt if nessesary
+machine_translation:
+  source_language: fi
+  source_language_fullname: Finnisch
+  target_language: de
+  target_language_fullname: Deutsch
+  use_deepl: false
+  use_gpt: true
+  model: gpt-4-turbo-preview
+  prompt: 
+    - system: "Bitte übersetze das json im Kontext von ${source_language_fullname} nach ${target_language_fullname}"
+    - assistant: "Wie lautet der Kontext?"
+    - user: "${context}"
+    - assistant: "Wie lautet das Json, welches übersetzt werden soll?"
+    - user: "${json_string}"

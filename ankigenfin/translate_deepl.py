@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 # https://github.com/DeepLcom/deepl-python
 
-async def translate(deck, overwrite=False, all=False, max_parallel_calls=5, timeout=60):
+async def translate_deepl(config, deck, overwrite=False, all=False, max_parallel_calls=5, timeout=60):
     await db_init() 
 
     deepl_key = os.environ.get("DEEPL_API_KEY")

@@ -5,6 +5,7 @@ db.sqlite3.*
 .DS_Store
 output/*.apkg
 kaikki.org-dictionary-Finnish.json
+apkg_test
 
 
 # Byte-compiled / optimized / DLL files
