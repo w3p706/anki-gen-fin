@@ -36,6 +36,9 @@ def stats():
     print("Statistics computed successfully.")
     print(statistics)
 
+def clean_up_media_folder():
+    run_async(ankigenfin.clean_up_media_folder())
+
 def vtt_to_csv(inputfile, outputfile, ankideck):
     input = get_absolute_path(INPUT_DIR, inputfile)
     output = get_absolute_path(INPUT_DIR, outputfile, check_exists=False, check_missing=True)
@@ -52,6 +55,9 @@ def main():
     # stats command
     parser_stats = subparsers.add_parser('stats', help='Compute statistics.')
 
+    # clean-up-media-folder command
+    parser_clean_up_media_folder = subparsers.add_parser('clean-up', help='Clean up media folder.')
+
     # vtt-to-csv command
     parser_vtt_to_csv = subparsers.add_parser('vtt-to-csv', help='Convert VTT to CSV.')
     parser_vtt_to_csv.add_argument('inputfile', type=str, help='Input VTT file, relative to the input directory')
@@ -66,6 +72,8 @@ def main():
         stats()
     elif args.command == 'vtt-to-csv':
         vtt_to_csv(args.inputfile, args.outputfile, args.ankideck)
+    elif args.command == 'clean-up':
+        clean_up_media_folder()
     else:
         parser.print_help()
 
