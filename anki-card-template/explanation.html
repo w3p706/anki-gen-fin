@@ -1,0 +1,66 @@
+<!-- 
+
+    this is the model the of the data that is passed to the template
+    
+    '{
+    "word": "Koiramme",
+    "lemma": "koira",
+    "suffixes": [
+        {
+            "-mme": "1. Person Plural possessivsuffix; unser"
+        }
+    ],
+    "meaning": "unser Hund",
+    "explanation": "Das finnische Wort \'Koiramme\' besteht aus der Grundform \'koira\', was \'Hund\' bedeutet, und dem Suffix \'-mme\', welches einen Besitz in der ersten Person Plural (unser) anzeigt. Es wird in einer neutralen, allt\\u00e4glichen Situation verwendet, um auf ein Haustier zu verweisen, das den Sprechern gemeinsam geh\\u00f6rt.",
+    "sample": {
+        "target-language": "Koiramme leikkii puistossa.",
+        "translation": "Unser Hund spielt im Park."
+        }
+    }' 
+
+-->
+
+{% macro create_html_wiktionary_links(lemma) %}
+    {% if lemma %}
+        <a href='http://en.m.wiktionary.org/wiki/{{ lemma|urlencode }}#Finnish'>{{ lemma }}</a>
+    {% endif %}
+{% endmacro %}
+
+{% macro process_endungen(endungen) %}
+    {% if endungen %}
+        {% for entry in endungen %}
+            {% for suffix, definition in entry.items() %}
+                <div class="row">
+                    <div class="suffix">{{ suffix }}&nbsp;</div>
+                    <div class="suffix-def">{{ definition }}</div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+
+<div class="word-definition">
+    <details>
+        <summary>
+            <div class="summary-content">
+                <div class="word"><b>{{ item.get('word', '---') }}</b> {{ item.get('lemma', '---') }}</div>
+                <div class="translation">{{ item.get('meaning', '---') }}</div>
+            </div>
+        </summary>
+        <div class="link small">
+            {{ create_html_wiktionary_links(item.lemma) }}
+        </div>
+        <div class="suffix-list small">
+            {{ process_endungen(item.get('suffixes', [])) }}                    
+        </div>
+        <div class="explanation small">
+            <p>{{ item.get('explanation', '---') }}</p>
+        </div>
+        <div class="sample small">
+            <b>Beispiel:</b>
+            <div>{{ item.sample.get('target-language', None) }}</div>
+            <div>{{ item.sample.get('translation', None) }}</div>
+        </div>
+    </details>
+</div>

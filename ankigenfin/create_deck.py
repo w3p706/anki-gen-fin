@@ -1,4 +1,3 @@
-from .generate_html import generate_html
 import genanki
 import os
 import logging
@@ -7,161 +6,40 @@ from tortoise import run_async
 from tortoise.functions import Count
 from .db import db_init, LearningItem, Explanation, Lesson   # Adjust the import path as necessary
 import uuid
+from jinja2 import Environment, FileSystemLoader
+from .config import *
 
 
 logger = logging.getLogger(__name__)
 
+async def get_model():
 
-my_model = genanki.Model(
-  1865967360,
-  'Card with Explanation & Media',
-  fields=[
-    {'name': 'Finnish'},
-    {'name': 'English'},
-    {'name': 'Explanation'},
-    {'name': 'HasReverse'},
-    {'name': 'Media'}
-  ],
-  templates=[
-    {
-      'name': 'Card Finnish => English',
-      'qfmt': '<div class="front"><span>{{Finnish}}</span><span style="float: right;">{{Media}}</span></div>',
-      'afmt': '{{FrontSide}}<div class="back">{{English}}</div>{{Explanation}}',
-    },
-    {
-      'name': 'Card English => Finnish',
-      'qfmt': '{{#HasReverse}}{{English}}{{/HasReverse}}',
-      'afmt': '{{FrontSide}}<div class="back"><span>{{Finnish}}</span><span style="float: right;">{{Media}}</span></div>{{Explanation}}',
-    }
-  ],
-    css="""
- 
-        .card {
-            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 20px;
-            color: black;
-            background-color: white;
-            text-align: left;
-            padding: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+    css_path = Config.get().anki_card.css_path
+    with open(css_path, 'r') as file:
+        css = file.read()
 
-        a {
-            text-decoration: none;
-            border-bottom: 3px solid #ff569d;
-            color: #3c0e21;
-            line-height: 1.5em;
-        }
+    fields = []
+    for field in Config.get().anki_card.fields:
+        fields.append({'name': field})
 
-        details {
-            margin: 0 40px 10px 17px;
-        }
+    templates = []
+    for t in Config.get().anki_card.templates:
+        templates.append({
+            'name': t.name,
+            'qfmt': t.qfmt,
+            'afmt': t.afmt,
+        })
 
-        p {
-            margin: 0 0 3px;
-        }
-        
-        .back { 
-            border-top: 1px solid rgb(187, 187, 187);
-            padding: 20px 0; 
-            margin: 20px 0;
-        }
+    my_model = genanki.Model(
+        Config.get().anki_card.id,
+        Config.get().anki_card.name,
+        fields=fields,
+        templates=templates,
+        css=css,)
+    
+    return my_model
 
-        .explanation {
-            margin-bottom: 10px;
-            font-family: ui-serif, "New York", serif;
-            color: rgb(82, 82, 82);
-            margin-left: 1em;
-        }
-
-        .explanation,
-        .link {
-            /* line-height: 1em; */
-            color: rgb(82, 82, 82);
-            margin: 0 0 10px;
-        }
-
-        .link {
-            text-align: right;
-        }
-
-        .suffix-list {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin: 20px 0;
-            margin-left: 1em;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 10px;
-        }
-
-        .suffix {
-            flex: 0 0 15%;
-            margin-right: 10px;
-        }
-
-        .suffix-def {
-            flex: 1;
-        }
-
-        .small {
-            font-family: ui-serif, "New York", serif;
-            color: rgb(82, 82, 82);
-            font-size: 0.7em;
-            line-height: 1em;
-        }
-
-        /* https://www.sitepoint.com/community/t/safari-details-summary-problem/396745/13 */
-        .word-definition summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .word-definition summary {
-            position: relative;
-            font-size: 0.8em;
-            list-style: none;
-            cursor: pointer;
-        }
-        .word-definition .word > b {
-            color: #861d48;
-        }
-
-        /* right arrow */
-        .word-definition summary::before {
-            content: "";
-            position: absolute;
-            left: -18px;
-            top: 5px;
-            width: 6px;
-            height: 6px;
-            border-top: 2px solid #ff569d;
-            border-right: 2px solid #ff569d;
-            transform: rotate(45deg);
-        }
-
-        .word-definition details[open] summary::before {
-            transform: rotate(135deg);
-        }
-
-        .sample {
-            margin-top: 20px;
-        }
-
-        .sample > div {
-            margin: 10px 0 10px 40px;
-        }
-
-        .replay-button {
-            border: initial;
-        }
-
-
-""",)
+    
 
 
 async def write_deck(learingitems, file_path):
@@ -170,19 +48,44 @@ async def write_deck(learingitems, file_path):
     media = []
     last_deck_name = ""   
 
+    my_model = await get_model()
+
+    template_path = Config.get().anki_card.explanation_template
+
+    template_dir = os.path.dirname(template_path)
+    template_file = os.path.basename(template_path)
+    env = Environment(loader=FileSystemLoader(template_dir))
+    template = env.get_template(template_file)
+
     for item in learingitems:    
 
-        audio_file_basename = None
-
-        if (item.audio_file_name is not None):
-            audio_file_basename = os.path.basename(item.audio_file_name)
-            media.append(item.audio_file_name)
+        subfolder = str(item.audio_file_name)[0]
+        subfolder_path = os.path.join(Config.get().audio_generation.output_folder, subfolder)
+        filename = os.path.join(subfolder_path, item.audio_file_name)
+        media.append(filename)
 
         explanations = await Explanation.filter(learning_item=item).order_by('index')
-    
+
+        # '{
+        #     "word": "Koiramme",
+        #     "lemma": "koira",
+        #     "suffixes": [
+        #         {
+        #             "-mme": "1. Person Plural possessivsuffix; unser"
+        #         }
+        #     ],
+        #     "meaning": "unser Hund",
+        #     "explanation": "Das finnische Wort \'Koiramme\' besteht aus der Grundform \'koira\', was \'Hund\' bedeutet, und dem Suffix \'-mme\', welches einen Besitz in der ersten Person Plural (unser) anzeigt. Es wird in einer neutralen, allt\\u00e4glichen Situation verwendet, um auf ein Haustier zu verweisen, das den Sprechern gemeinsam geh\\u00f6rt.",
+        #     "sample": {
+        #         "target-language": "Koiramme leikkii puistossa.",
+        #         "translation": "Unser Hund spielt im Park."
+        #     }
+        # }'
+
         html = ""
         for word in explanations:
-            html += generate_html(word) or ""
+            explanation_html = template.render(item=word.explanation_detail)
+            html += explanation_html or ""
 
         has_reverse = ""
 
@@ -199,7 +102,7 @@ async def write_deck(learingitems, file_path):
 
         my_note = genanki.Note(
             model=my_model,
-            fields=[item.native_text, f"{translation}" , html, has_reverse, f"[sound:{audio_file_basename}]"],
+            fields=[item.native_text, f"{translation}" , html, has_reverse, f"[sound:{item.audio_file_name}]"],
             guid=item.anki_guid)
         
         lesson = await Lesson.get(lesson_id=item.lesson_id)

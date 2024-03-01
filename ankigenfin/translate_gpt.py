@@ -1,3 +1,4 @@
+## This translates all words of a deck with the GPT
 import os
 import logging
 import logger
@@ -23,11 +24,6 @@ from string import Template
 logger = logging.getLogger(__name__)
 
 
-
-## This translates all words of a deck with the GPT
-config : MachineTranslation = None
-
-
 headers = {
     "Content-Type": "application/json",
     "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}"
@@ -35,7 +31,7 @@ headers = {
 
 
 @retry(wait=wait_random_exponential(min=1, max=60), 
-       stop=stop_after_attempt(20), 
+       stop=stop_after_attempt(Config.get().machine_translation.gpt_options.max_retries), 
        before_sleep=before_sleep_log(logger, logging.INFO), 
        retry_error_callback=lambda _: None)
 async def get_completion(item, context, session, semaphore, progress_log):
@@ -45,29 +41,31 @@ async def get_completion(item, context, session, semaphore, progress_log):
 
     async with semaphore:
 
-        daten = {
-            'source_language_fullname': config.source_language_fullname,
-            'target_language_fullname': config.target_language_fullname,
+        template_data = {
+            # this is seamingly the wrong way round, but we translate from the language we learn (target) to the translated language (mother tongue)
+            'source_language_fullname': Config.get().target_language.fullname,
+            'target_language_fullname': Config.get().translated_language.fullname,
             'context': context,
             'json_string': json_string
         }
 
+        gpt_options = Config.get().machine_translation.gpt_options
+
         messages = []
-        for message in config.prompt:
+        for message in gpt_options.prompt:
             # @TODO: This could be done so that the prompt is rendered as template only once and not each time.
             if isinstance(message, SystemMessage):
-                messages.append({'role':"system", 'content': Template(message.system).safe_substitute(daten)})
+                messages.append({'role':"system", 'content': Template(message.system).safe_substitute(template_data)})
             elif isinstance(message, AssistantMessage):
-                messages.append({'role':"assistant", 'content': Template(message.assistant).safe_substitute(daten)})
+                messages.append({'role':"assistant", 'content': Template(message.assistant).safe_substitute(template_data)})
             elif isinstance(message, UserMessage):
-                messages.append({'role':"user", 'content': Template(message.user).safe_substitute(daten)})
+                messages.append({'role':"user", 'content': Template(message.user).safe_substitute(template_data)})
 
 
         async with session.post("https://api.openai.com/v1/chat/completions", headers=headers, json={
-            "model": config.model,
+            "model": gpt_options.model,
             "messages": messages,
-            "response_format" : {"type": "json_object"}
-            
+            "response_format" : {"type": "json_object"}            
         }) as resp:
 
             if resp.status != 200:
@@ -100,11 +98,7 @@ def chunk_list(lst, chunk_size):
         yield lst[i:i + chunk_size]
 
 
-async def translate_gpt(mainConfig : MainConfig, deck, overwrite=False, all=False, max_parallel_calls=5, timeout=120):
-
-    global config
-    config = mainConfig.machine_translation
-    
+async def translate_gpt(deck, overwrite=False, all=False):
     await db_init() 
 
     items = None
@@ -129,10 +123,11 @@ async def translate_gpt(mainConfig : MainConfig, deck, overwrite=False, all=Fals
 
     context = "\n".join([item["text"] for item in items_list[:100]])
 
-    semaphore = asyncio.Semaphore(value=max_parallel_calls)
+    config = Config.get().machine_translation
+    semaphore = asyncio.Semaphore(value=config.gpt_options.max_parallel_calls)
     progress_log = ProgressLog(len(items_list))
 
-    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(timeout)) as session:
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(config.gpt_options.timeout)) as session:
         tasks = [get_completion(item, context, session, semaphore, progress_log) for item in items_list]
         await asyncio.gather(*tasks)
 

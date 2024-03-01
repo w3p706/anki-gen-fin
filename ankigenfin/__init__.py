@@ -1,4 +1,4 @@
-from .config import config
+from .config import Config
 from .import_learning_items import import_learning_items
 from .analyze import analyze
 from .explain import explain
@@ -9,3 +9,4 @@ from .create_deck import create_deck
 from .check_and_migrate_explanations import check_and_migrate_explanations
 from .compute_statistics import compute_statistics
 from .vtt_to_csv import vtt_to_csv
+from .clean_up_media_folder import clean_up_media_folder

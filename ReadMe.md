@@ -1,4 +1,10 @@
-﻿The `process.py` script is designed for managing and processing learning items, particularly for generating Anki decks from CSV files. It integrates various functionalities, including importing CSV files, processing them, and exporting as Anki package files (.apkg), as well as additional deck analysis, explanation, audio generation, translation, and listing items in the database. Here's a brief overview of its command-line interface (CLI) documentation, including examples:
+﻿Todo
+- Seed Database
+- 
+
+
+
+The `process.py` script is designed for managing and processing learning items, particularly for generating Anki decks from CSV files. It integrates various functionalities, including importing CSV files, processing them, and exporting as Anki package files (.apkg), as well as additional deck analysis, explanation, audio generation, translation, and listing items in the database. Here's a brief overview of its command-line interface (CLI) documentation, including examples:
 
 ### Overview
 

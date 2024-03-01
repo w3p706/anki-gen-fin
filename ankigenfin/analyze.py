@@ -8,14 +8,11 @@ import csv
 import logging
 from .db import db_init, Lesson, LearningItem, Analysis, AnalysisLabel 
 import logger
+from .config import *
 
 logger = logging.getLogger(__name__)
 
-cg = Cg3("fin")
-
-language_dict = {
-    'fin': 'Finnish'
-}
+cg = None
 
 async def process_morphology(arr):
     labels = []
@@ -29,8 +26,8 @@ async def process_morphology(arr):
         elif item.startswith('<'):
             # Lookup in the language dictionary
             key = item.strip('<>')  # Remove '<', '>'
-            if key in language_dict:
-                language = language_dict[key]
+            if key in Config.get().analyze:
+                language = Config.get().analyze[key]
             else:
                 language = key
                 logger.warn(f"Warning: '{item}' not found in language dictionary.")
@@ -88,6 +85,9 @@ async def disambiguate_sentence(leaning_item):
 
 
 async def analyze(deck, overwrite=False, all=False):
+    global cg
+    cg = Cg3(Config.get().target_language.cg_language_name)
+
     analysis_count = 0
     await db_init() 
 

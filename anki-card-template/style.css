@@ -1,0 +1,124 @@
+
+.card {
+    font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 3px solid #ff569d;
+    color: #3c0e21;
+    line-height: 1.5em;
+}
+
+details {
+    margin: 0 40px 10px 17px;
+}
+
+p {
+    margin: 0 0 3px;
+}
+
+.back { 
+    border-top: 1px solid rgb(187, 187, 187);
+    padding: 20px 0; 
+    margin: 20px 0;
+}
+
+.explanation {
+    margin-bottom: 10px;
+    font-family: ui-serif, "New York", serif;
+    color: rgb(82, 82, 82);
+    margin-left: 1em;
+}
+
+.explanation,
+.link {
+    /* line-height: 1em; */
+    color: rgb(82, 82, 82);
+    margin: 0 0 10px;
+}
+
+.link {
+    text-align: right;
+}
+
+.suffix-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    margin-left: 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.suffix {
+    flex: 0 0 15%;
+    margin-right: 10px;
+}
+
+.suffix-def {
+    flex: 1;
+}
+
+.small {
+    font-family: ui-serif, "New York", serif;
+    color: rgb(82, 82, 82);
+    font-size: 0.7em;
+    line-height: 1em;
+}
+
+/* https://www.sitepoint.com/community/t/safari-details-summary-problem/396745/13 */
+.word-definition summary::-webkit-details-marker {
+    display: none;
+}
+
+.word-definition summary {
+    position: relative;
+    font-size: 0.8em;
+    list-style: none;
+    cursor: pointer;
+}
+.word-definition .word > b {
+    color: #861d48;
+}
+
+/* right arrow */
+.word-definition summary::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #ff569d;
+    border-right: 2px solid #ff569d;
+    transform: rotate(45deg);
+}
+
+.word-definition details[open] summary::before {
+    transform: rotate(135deg);
+}
+
+.sample {
+    margin-top: 20px;
+}
+
+.sample > div {
+    margin: 10px 0 10px 40px;
+}
+
+.replay-button {
+    border: initial;
+}

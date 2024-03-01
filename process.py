@@ -13,8 +13,6 @@ logger = logging.getLogger(__name__)
 INPUT_DIR = "input"
 OUTPUT_DIR = "output"
 
-config = ankigenfin.config("config.yml")
-
 
 def get_absolute_path(input_dir, provided_path, check_exists=True):
     """
@@ -31,18 +29,16 @@ def get_absolute_path(input_dir, provided_path, check_exists=True):
 
 async def process(input_path):
     """
-    Import a CSV file, process it, and export as an APKG file.
+    Runs all the steps.
+    Imports a CSV file, processes it, and export as an APKG file.
     """
-    logger.info(f"Importing file {input_path} and exporting as APKG")
-    input = get_absolute_path(INPUT_DIR, input_path)
-    decks, rows_imported, total_rows = await ankigenfin.import_learning_items(input)
+    decks, rows_imported, total_rows = await import_deck(input_path)
     for deck in decks:
-        await ankigenfin.analyze(deck.lesson_id)
-        await ankigenfin.explain(deck.lesson_id)
-        await ankigenfin.generate_audio(deck.lesson_id)
-        await ankigenfin.translate(deck.lesson_id)
-        output = get_absolute_path(OUTPUT_DIR, deck.folder.replace(':', '_') + '.apkg', check_exists=False)
-        await ankigenfin.create_deck(deck.lesson_id, output)
+        await analyze_deck(deck.lesson_id)
+        await explain_deck(deck.lesson_id)
+        await generate_audio(deck.lesson_id)
+        await translate_deck(deck.lesson_id)
+        await export_as_apkg(deck.lesson_id, deck.folder.replace(':', '_') + '.apkg')
     
 
 
@@ -52,7 +48,8 @@ async def import_deck(input_path):
     """
     input = get_absolute_path(INPUT_DIR, input_path)
     logger.info(f"Importing deck from file {input}")
-    decks, rows_imported = await ankigenfin.import_learning_items(input)
+    decks, rows_imported, total_rows = await ankigenfin.import_learning_items(input)
+    return decks, rows_imported, total_rows
 
 
 async def analyze_deck(deck, overwrite=False):
@@ -84,11 +81,12 @@ async def translate_deck(deck, overwrite=False):
     """
     Translate a deck, optionally overwriting existing translation data.
     """
+    config = ankigenfin.Config.get().machine_translation
     logger.info(f"Translating deck {deck}{' with overwrite' if overwrite else ''}")
-    if config.machine_translation.use_deepl:
-        await ankigenfin.translate_deepl(config, deck, overwrite)
-    if config.machine_translation.use_gpt:
-        await ankigenfin.translate_gpt(config, deck, overwrite)
+    if config.use_deepl:
+        await ankigenfin.translate_deepl(deck, overwrite)
+    if config.use_gpt:
+        await ankigenfin.translate_gpt(deck, overwrite)
 
 
 
@@ -111,6 +109,7 @@ async def list_items():
 
 
 def main(argv):
+
     parser = argparse.ArgumentParser(description="CLI for processing CSV data for decks and learning items.")
     subparsers = parser.add_subparsers(title="commands", dest="command")
 

@@ -17,39 +17,11 @@ from tortoise import run_async
 from tortoise.functions import Count
 from .db import db_init, LearningItem, SkipList, Analysis, Explanation, Lesson, Etymology  # Adjust the import path as necessary
 from .progress_log import ProgressLog
+from .config import *
+from string import Template
 
-
-
-# Inpired by https://towardsdatascience.com/the-proper-way-to-make-calls-to-chatgpt-api-52e635bea8ff
 
 logger = logging.getLogger(__name__)
-
-instructions = """Der Finnish Language Expert analysiert finnische Wörter auf Deutsch und liefert das Ergebnis in einem spezifischen JSON-Format zurück. Als Input erhält er ein Wort ('word'), mögliche Begriffsklärungen mit Fallanalyse ('disambiguations'), Etymologie ('etymology') und ein Satz ('sentence') als Kontext. Für jedes analysierte Wort gibt er eine strukturierte JSON-Antwort zurück, die folgendes enthält:
-- 'word' (das gegebene Wort), 
-- 'lemma' (die Grundform des Wortes), 
-- 'suffixes' (eine Liste mit Tupeln aus der im Wort verwendeten Endungen sowie deren Fälle und Bedeutung), 
-- 'meaning' (die Bedeutung des Wortes auf Deutsch) 
-- 'explanation' (Erkläre in einem kurzen und knappen Satz das Wort im Kontext des angegeben Satzes 'sentence')
-- 'sample' (Beispielsatz mit dem analysierten Wort in Finnisch (key target-language) und Deutsch (key translation). Nicht der im Kontext übermittelte Satz.)
-
-Dieses Format sorgt für eine klare und systematische Darstellung der linguistischen Analyse. Der Expert bleibt sachlich und direkt, mit einem neutralen Ton.
-
-Beispiel:
-
-{
-  "word": "elokuvassaan",
-  "lemma": "elokuva",
-  "suffixes": [
-    {"-ssa": "inessiv; innerhalb von, in etwas drin"},
-    {"-an": "3. Person Singular possessivsuffix; sein/ihr"}
-  ],
-  "meaning": "in seinem/ihrem Film",
-  "explanation": "Das finnische Wort 'elokuva' bedeutet 'Film' oder 'Kino' auf Deutsch. Es setzt sich aus zwei Teilen zusammen: „elo“ und „kuva“.\n'Elo': Dieser Teil des Wortes stammt von „elämä“, was „Leben“ bedeutet. Es bezieht sich auf etwas Lebendiges oder Dynamisches.\n'Kuva': Dieser Teil bedeutet 'Bild' oder 'Abbildung'.", 
-  "sample": {
-    "target-language": "Ohjaaja esitteli uusia teemoja elokuvassaan.",
-    "translation": "Der Regisseur stellte neue Themen in seinem Film vor."
-  }
-}"""
 
 
 headers = {
@@ -57,45 +29,49 @@ headers = {
     "Authorization": f"Bearer {os.environ.get("OPENAI_API_KEY")}"
 }
 
-# Idea: depending on the word Type, we can request different explanation details from the AI
-# Or Maybe use 2-Shot-Mode to ask for the explantion in a second request
-# explantion_detail = {
-#     "Human": "Erkläre kurz und knapp das Wort im Kontext des Satzes.",
-#     "Other": "Erkläre kurz und knapp aus welchen Teilen das Wortes besteht, und erläutere die einzenen Bestandteile. Wenn es im Nominativ ist musst du das nicht erklären. Sonst erläutere wieso in diesem Satz dieser Fall benötigt wird. Liefere hier auch spezielle Hinweise zur Verwendung dieses Wortes wenn es welche gibt."
-# }
-
-schema_file_path = "ankigenfin/gpt-out.schema.json"
 
 def load_json_schema():
     """
     Load the JSON Schema from a file.
     """
-    with open(schema_file_path, 'r') as file:
+    with open(Config.get().explain.gpt_options.schema_file_path, 'r') as file:
         schema = json.load(file)
     return schema
 
+# Inpired by https://towardsdatascience.com/the-proper-way-to-make-calls-to-chatgpt-api-52e635bea8ff
 @retry(wait=wait_random_exponential(min=1, max=60), 
-       stop=stop_after_attempt(20), 
-       before_sleep=before_sleep_log(logger, logging.INFO), 
-       retry_error_callback=lambda _: None)
+    stop=stop_after_attempt(Config.get().explain.gpt_options.max_retries), 
+    before_sleep=before_sleep_log(logger, logging.INFO), 
+    retry_error_callback=lambda _: None)
 async def get_completion(word_data_with_context, session, semaphore, schema):
 
     word_data_with_context_str = str(word_data_with_context)
     async with semaphore:
 
+        gpt_options = Config.get().explain.gpt_options
+
+        template_data = {
+            'target_language_fullname': Config.get().target_language.fullname,
+            'translated_language_fullname': Config.get().translated_language.fullname,
+            'word_data_with_context_str': word_data_with_context_str,
+        }
+
+        messages = []
+        for message in gpt_options.prompt:
+            # @TODO: This could be done so that the prompt is rendered as template only once and not each time.
+            if isinstance(message, SystemMessage):
+                messages.append({'role':"system", 'content': Template(message.system).safe_substitute(template_data)})
+            elif isinstance(message, AssistantMessage):
+                messages.append({'role':"assistant", 'content': Template(message.assistant).safe_substitute(template_data)})
+            elif isinstance(message, UserMessage):
+                messages.append({'role':"user", 'content': Template(message.user).safe_substitute(template_data)})
+
+
+
         async with session.post("https://api.openai.com/v1/chat/completions", headers=headers, json={
-            "model": "gpt-4-turbo-preview",
-            "messages": [
-              {
-                "role": "system",
-                "content": instructions,
-              },
-              {
-                "role": "user",
-                "content": word_data_with_context_str,
-              }
-            ],
-            "response_format" : {"type": "json_object"}
+            "model": gpt_options.model,
+            "messages": messages,
+            "response_format" : {"type": "json_object"}      
         }) as resp:
 
             if resp.status != 200:
@@ -113,8 +89,6 @@ async def get_completion(word_data_with_context, session, semaphore, schema):
 
 async def process_row(learning_item, session, semaphore, progress_log, schema):
 
-    order = 0
-
     analysis = Analysis.filter(learning_item=learning_item)    
 
     distinct_indexes = await analysis.distinct().values_list("index", flat=True)
@@ -129,6 +103,7 @@ async def process_row(learning_item, session, semaphore, progress_log, schema):
 
         skiplist = await SkipList.get_or_none(word=word.lower())
         if (skiplist is not None):
+            logger.info(f'Skipping \'{word}\' for \'{learning_item.native_text}\' ({learning_item.learning_item_id}) because it\'s on the skip list.')
             continue
 
         word_data_with_context = {
@@ -181,8 +156,7 @@ async def process_row(learning_item, session, semaphore, progress_log, schema):
 
 
 
-async def explain(deck, overwrite=False, all=False, max_parallel_calls=5, timeout=60):
-    
+async def explain(deck, overwrite=False, all=False):
     await db_init() 
 
     items = None
@@ -204,10 +178,10 @@ async def explain(deck, overwrite=False, all=False, max_parallel_calls=5, timeou
 
     schema = load_json_schema()
 
-    semaphore = asyncio.Semaphore(value=max_parallel_calls)
+    semaphore = asyncio.Semaphore(value=Config.get().explain.gpt_options.max_parallel_calls)
     progress_log = ProgressLog(0)
 
-    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(timeout)) as session:
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(Config.get().explain.gpt_options.timeout)) as session:
         tasks = [process_row(item, session, semaphore, progress_log, schema) for item in items]
         await asyncio.gather(*tasks)
 
