@@ -10,3 +10,4 @@ from .check_and_migrate_explanations import check_and_migrate_explanations
 from .compute_statistics import compute_statistics
 from .vtt_to_csv import vtt_to_csv
 from .clean_up_media_folder import clean_up_media_folder
+from .generate_seed_db import generate_seed_db

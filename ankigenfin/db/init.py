@@ -1,5 +1,11 @@
 from tortoise import Tortoise, fields, models
 from tortoise.contrib.pydantic import pydantic_model_creator
+import os
+import logging
+import logger
+
+
+logger = logging.getLogger(__name__)
 
 # Your models definitions here
 
@@ -14,5 +20,10 @@ TORTOISE_ORM = {
 }
 
 async def db_init():
+
+    if (not os.path.exists('media/db.sqlite3')):
+        logger.info('no database found, copy seed database from seed.sqlite3')
+        os.copy('seed.sqlite3', 'media/db.sqlite3')
+
     await Tortoise.init(config=TORTOISE_ORM)
     await Tortoise.generate_schemas()

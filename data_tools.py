@@ -39,6 +39,9 @@ def stats():
 def clean_up_media_folder():
     run_async(ankigenfin.clean_up_media_folder())
 
+def generate_seed_db():
+    run_async(ankigenfin.generate_seed_db())
+
 def vtt_to_csv(inputfile, outputfile, ankideck):
     input = get_absolute_path(INPUT_DIR, inputfile)
     output = get_absolute_path(INPUT_DIR, outputfile, check_exists=False, check_missing=True)
@@ -57,6 +60,7 @@ def main():
 
     # clean-up-media-folder command
     parser_clean_up_media_folder = subparsers.add_parser('clean-up', help='Clean up media folder.')
+    parser_clean_up_media_folder = subparsers.add_parser('generate-seed-db', help='Generates an initial database with static data like etymology.')
 
     # vtt-to-csv command
     parser_vtt_to_csv = subparsers.add_parser('vtt-to-csv', help='Convert VTT to CSV.')
@@ -74,6 +78,9 @@ def main():
         vtt_to_csv(args.inputfile, args.outputfile, args.ankideck)
     elif args.command == 'clean-up':
         clean_up_media_folder()
+        vtt_to_csv(args.inputfile, args.outputfile, args.ankideck)
+    elif args.command == 'generate-seed-db':
+        generate_seed_db()
     else:
         parser.print_help()
 
