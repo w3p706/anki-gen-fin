@@ -32,13 +32,13 @@ async def process_morphology(arr):
                 language = key
                 logger.warn(f"Warning: '{item}' not found in language dictionary.")
         elif item.startswith('@'):
-            label = await AnalysisLabel.filter(label=item).first()
+            label = await AnalysisLabel.filter(label__iexact=item).first()
             if label:
                 analysis_label = label.description
             else:
                 logger.warn(f"Warning: analytics label not found: '{item}'")
         else:
-            label = await AnalysisLabel.filter(label=item).first()
+            label = await AnalysisLabel.filter(label__iexact=item).first()
             if label:
                 labels.append(label.description)
             else:
@@ -74,8 +74,15 @@ async def disambiguate_sentence(leaning_item):
 
             analysis = '+'.join([item for item in word_analysis['morphology'] if not item.startswith('<')])
 
+
+            try:
+                token_index = tokens.index(word)
+            except ValueError:                
+                logger.warn(f"Exess word from disambiguation. Word: {word}, Tokens: {tokens}, Native Text: {leaning_item.native_text}, Disambiguation: {disambiguations}")
+                continue  
+
             await Analysis.create(
-                    index=tokens.index(word),
+                    index=token_index,
                     word=word, 
                     lemma=possible_word.lemma, 
                     analysis = possible_word.lemma + '+' + analysis,
