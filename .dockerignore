@@ -37,4 +37,5 @@ README.md
 **/output
 **/media
 **/docs
-ankigenfin/base_data
+**/test_data
+**/ankigenfin/base_data/kaikki.org-dictionary-Finnish.jsonlines

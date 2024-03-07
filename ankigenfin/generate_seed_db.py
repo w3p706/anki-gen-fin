@@ -41,11 +41,10 @@ async def download_file(url, path):
                     downloaded += len(chunk)
 
                     if total_size > 0:
-                        progress = (downloaded / total_size) * 100
                         # Check if progress has crossed the next 10% threshold
-                        if progress >= last_reported_progress + 150:
-                            logger.info(f'Download progress: {progress:.0f}%')
-                            last_reported_progress = progress - (progress % 10)  # Update threshold
+                        if downloaded >= last_reported_progress + (100 * 1024 * 1024):
+                            logger.info(f'Download progress: {downloaded / 1024 / 1024:.0f}MB')
+                            last_reported_progress = downloaded 
 
     # Rename the temporary file to the final file name
     os.rename(f'{path}.tmp', path)
@@ -95,15 +94,13 @@ async def extract_word_etymology(file_path):
 
 
 
-async def import_skiplist_from_csv(csv_file_path):
-    logger.info(f'Import {csv_file_path}')    
+async def import_skiplist(file_path):
+    logger.info(f'Import {file_path}')    
     rows_imported = 0  # Initialize the counter
 
-    with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            await SkipList.update_or_create(word=row['Word'].lower())
-
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            await SkipList.update_or_create(word=line.strip().lower())            
             rows_imported += 1  # Increment the counter for each row imported
 
     logger.info(f'{rows_imported} rows imported')  # Log the number of rows imported
@@ -203,7 +200,7 @@ async def generate_seed_db():
 
     if (os.path.exists('seed_temp.sqlite3')):
         logger.info('Removing old incomplete seed_temp.sqlite3')
-        os.delete('seed_temp.sqlite3')
+        os.remove('seed_temp.sqlite3')
 
     TORTOISE_ORM = {
         "connections": {"default": "sqlite://seed_temp.sqlite3"},
@@ -219,7 +216,7 @@ async def generate_seed_db():
     await Tortoise.generate_schemas()
 
     dict_path = './ankigenfin/base_data/kaikki.org-dictionary-Finnish.jsonlines'
-    skip_list = './ankigenfin/base_data/skip_list.csv'
+    skip_list = './ankigenfin/base_data/skip_list.txt'
     kopus_tags = './ankigenfin/base_data/korpustags.fin.txt'
     analysis_labels = './ankigenfin/base_data/analysis_label.csv'
     root_lexc = './ankigenfin/base_data/root.lexc'
@@ -229,7 +226,7 @@ async def generate_seed_db():
     await extract_word_etymology(dict_path)
 
     # Import the skip list
-    await import_skiplist_from_csv(skip_list)
+    await import_skiplist(skip_list)
 
     # Import the analysis labels
     await import_korpus_tags_fin(kopus_tags)
@@ -243,7 +240,7 @@ async def generate_seed_db():
 
     if (os.path.exists('seed.sqlite3')):
         logger.info('Removing old seed.sqlite3')
-        os.delete('seed.sqlite3')
+        os.remove('seed.sqlite3')
 
     os.rename('seed_temp.sqlite3', 'seed.sqlite3')
 

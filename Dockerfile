@@ -53,14 +53,43 @@ RUN curl https://apertium.projectjj.com/apt/apertium-packaging.public.gpg > /etc
 RUN pip install --upgrade --force-reinstall pyhfst --no-cache-dir && \
     python -m uralicNLP.download --languages fin eng 
 
+
+FROM base as container
+
 # Switch to the non-privileged user to run the application.
 USER appuser
 
 # Copy the source code into the container.
 COPY ankigenfin ./ankigenfin
+COPY anki-card-template ./anki-card-template
 COPY process.py .
 COPY data_tools.py .
 COPY logger.py .
+COPY seed.sqlite3 .
 
 
+
+
+FROM base as create_seed_db
+
+# Switch to the non-privileged user to run the application.
+RUN chmod -R a+w . 
+USER appuser
+
+# Copy the source code into the container.
+COPY --chown=appuser:appuser ankigenfin ./ankigenfin
+COPY anki-card-template ./anki-card-template
+COPY process.py .
+COPY data_tools.py .
+COPY logger.py .
+COPY config.yml .
+
+# # this is needed because of @retry decorator will run on import
+ENV CONFIG config.yml  
+
+RUN python data_tools.py generate-seed-db
+
+# https://stackoverflow.com/a/58752370
+FROM scratch as seed_db
+COPY --from=create_seed_db /app/seed.sqlite3 .
 

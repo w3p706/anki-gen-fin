@@ -6,6 +6,7 @@ db.sqlite3.*
 output/*.apkg
 kaikki.org-dictionary-Finnish.json
 apkg_test
+seed.sqlite3
 
 
 # Byte-compiled / optimized / DLL files
