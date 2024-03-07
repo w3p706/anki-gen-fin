@@ -1,12 +1,13 @@
-Input/LB*
+Input/*
 media/**
+ankigenfin/test_data
 *.log.old
 db.sqlite3.*
 .DS_Store
 output/*.apkg
-kaikki.org-dictionary-Finnish.json
 apkg_test
 seed.sqlite3
+**/ankigenfin/base_data/kaikki.org-dictionary-Finnish.jsonlines
 
 
 # Byte-compiled / optimized / DLL files
