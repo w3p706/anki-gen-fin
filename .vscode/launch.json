@@ -5,28 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File with Arguments",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "args": ["input/LB-S1-L12.csv"]
-        },
-        {
-            "name": "Explain Test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "args": ["101::LB-S1-L11"]
-        },
-        {
             "name": "Process",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "process.py",
             "console": "integratedTerminal",
-            "args": ["process","LB-S1-L11.csv"]
+            "args": ["process", "LB-S1-L17.csv"]
         }
+        // see also https://stackoverflow.com/questions/72351552/vs-code-debugging-prompting-for-arguments-and-also-setting-the-working-directory
     ]
 }
