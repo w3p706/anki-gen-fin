@@ -1,3 +1,5 @@
+% FORM https://github.com/giellalt/lang-fin/blob/main/test/data/korpustags.fin.txt (GPL3)
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
 %                                                                              %
 %    List of morphological and syntactic tags used in the Finnish corpus    %

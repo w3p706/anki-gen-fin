@@ -1,3 +1,5 @@
+! FROM https://github.com/giellalt/lang-fin/blob/main/src/fst/morphology/root.lexc (GPL3)
+
 ! -*- mode: lexc; coding: utf-8 -*-
 
 ! This semi-automatically generated lexc data is merged from
