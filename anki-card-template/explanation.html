@@ -31,8 +31,8 @@
         {% for entry in endungen %}
             {% for suffix, definition in entry.items() %}
                 <div class="row">
-                    <div class="suffix">{{ suffix }}&nbsp;</div>
-                    <div class="suffix-def">{{ definition }}</div>
+                    <div class="suffix">{{ suffix|e }}&nbsp;</div>
+                    <div class="suffix-def">{{ definition|e }}</div>
                 </div>
             {% endfor %}
         {% endfor %}
@@ -44,8 +44,8 @@
     <details>
         <summary>
             <div class="summary-content">
-                <div class="word"><b>{{ item.get('word', '---') }}</b> {{ item.get('lemma', '---') }}</div>
-                <div class="translation">{{ item.get('meaning', '---') }}</div>
+                <div class="word"><b>{{ item.get('word', '---')|e }}</b> {{ item.get('lemma', '---')|e }}</div>
+                <div class="translation">{{ item.get('meaning', '---')|e }}</div>
             </div>
         </summary>
         <div class="link small">
@@ -55,12 +55,12 @@
             {{ process_endungen(item.get('suffixes', [])) }}                    
         </div>
         <div class="explanation small">
-            <p>{{ item.get('explanation', '---') }}</p>
+            <p>{{ item.get('explanation', '---')|e }}</p>
         </div>
         <div class="sample small">
             <b>Beispiel:</b>
-            <div>{{ item.sample.get('target-language', None) }}</div>
-            <div>{{ item.sample.get('translation', None) }}</div>
+            <div>{{ item.sample.get('target-language', None)|e }}</div>
+            <div>{{ item.sample.get('translation', None)|e }}</div>
         </div>
     </details>
 </div>
