@@ -122,25 +122,20 @@ async def write_deck(learingitems, file_path):
     logger.info(f'File written: {file_path}')
 
 
-async def create_deck(deck, out_file):
-    logger.info(f"Processing Deck: {deck}")
+async def create_deck(lession_list, out_file=None):
     
     await db_init() 
 
-    items = None
-    lesson = None
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]  
 
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
-
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
+    logger.info(f"Creating deck for lessions {lession_list}")
+    items = await LearningItem.filter(lesson_id__in=lession_list).order_by('lesson_id', 'learning_item_id')
         
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
+    if (len(items) == 0):
+        logger.error(f'Lessions "{lession_list}" have no items')
         return
-
-    items = await LearningItem.filter(lesson=lesson)
 
     await write_deck(items, out_file)
 

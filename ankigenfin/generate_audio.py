@@ -59,11 +59,15 @@ async def get_audio(item, session, semaphore, progress_log):
 
         voice = random.choice(Config.get().audio_generation.voices)
 
+        text = item.native_text
+        if len(text.split()) == 1:
+            text = "sana on: " + text
+
         url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice.id}"
 
         async with session.post(url, headers=headers, json={
               "model_id": Config.get().audio_generation.model,
-              "text": item.native_text,
+              "text": text,
               "voice_settings": {
                 "use_speaker_boost": voice.use_speaker_boost,
                 "style": voice.style,
@@ -104,23 +108,20 @@ async def get_audio(item, session, semaphore, progress_log):
             logger.info(progress_log)
 
 
-async def generate_audio(deck, overwrite=False, all=False):
+async def generate_audio(lession_list):
+    
     await db_init() 
 
-    items = None
-    lesson = None
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]  
 
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
-
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
+    logger.info(f"Generate audio for lessions {lession_list}")
+    items = await LearningItem.filter(lesson_id__in=lession_list).filter(audio_file_name=None)
         
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
+    if (len(items) == 0):
+        logger.info(f'Lessions "{lession_list}" have no pending items')
         return
-
-    items = await LearningItem.filter(lesson=lesson).filter(audio_file_name=None)
 
     semaphore = asyncio.Semaphore(value=Config.get().audio_generation.max_parallel_calls)
     progress_log = ProgressLog(len(items))

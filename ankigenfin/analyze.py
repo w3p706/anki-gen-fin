@@ -91,30 +91,26 @@ async def disambiguate_sentence(leaning_item):
                 )
 
 
-async def analyze(deck, overwrite=False, all=False):
+async def analyze(lession_list):
     global cg
     cg = Cg3(Config.get().target_language.cg_language_name)
-
-    analysis_count = 0
+    
     await db_init() 
 
-    items = None
-    lesson = None
-
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
-
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
-        
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
-        return
-
-    items = await LearningItem.filter(lesson=lesson).annotate(
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]   
+    
+    logger.info(f"Analyze words for lessions {lession_list}")
+    items = await LearningItem.filter(lesson_id__in=lession_list).annotate(
         analysis_count=Count('analysis')
     ).filter(analysis_count=0)
 
+    if (len(items) == 0):
+        logger.info(f'Lessions "{lession_list}" have no pending items')
+        return
+
+    analysis_count = 0
     for item in items:
         await disambiguate_sentence(item)
 

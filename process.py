@@ -32,13 +32,16 @@ async def process(input_path):
     Runs all the steps.
     Imports a CSV file, processes it, and export as an APKG file.
     """
+    basename = os.path.basename(input_path).split('.')[0]
+
     decks, rows_imported, total_rows = await import_deck(input_path)
-    for deck in decks:
-        await analyze_deck(deck.lesson_id)
-        await explain_deck(deck.lesson_id)
-        await generate_audio(deck.lesson_id)
-        await translate_deck(deck.lesson_id)
-        await export_as_apkg(deck.lesson_id, deck.folder.replace(':', '_') + '.apkg')
+    lesson_ids = [lesson.lesson_id for lesson in decks]   
+
+    await analyze_deck(lesson_ids)
+    await explain_deck(lesson_ids)
+    await generate_audio(lesson_ids)
+    await translate_deck(lesson_ids)
+    await export_as_apkg(lesson_ids, out_file=basename + '.apkg')
     
 
 
@@ -52,51 +55,47 @@ async def import_deck(input_path):
     return decks, rows_imported, total_rows
 
 
-async def analyze_deck(deck, overwrite=False):
+async def analyze_deck(lession_list):
     """
-    Analyze a deck, optionally overwriting existing analysis.
+    Analyze a deck
     """
-    logger.info(f"Analyzing deck {deck}{' with overwrite' if overwrite else ''}")
-    await ankigenfin.analyze(deck, overwrite)
+    await ankigenfin.analyze(lession_list)
     
 
 
-async def explain_deck(deck, overwrite=False):
+async def explain_deck(lession_list):
     """
-    Create explanations for all words in a deck, optionally overwriting existing explanation.
+    Create explanations for all words in a deck
     """
-    logger.info(f"Explaining deck {deck}{' with overwrite' if overwrite else ''}")
-    await ankigenfin.explain(deck, overwrite)
+    await ankigenfin.explain(lession_list)
 
 
-async def generate_audio(deck, overwrite=False):
+async def generate_audio(lession_list):
     """
-    Generate audio for a deck, optionally overwriting existing audio files.
+    Generate audio for a deck
     """
-    logger.info(f"Generating audio for deck {deck}{' with overwrite' if overwrite else ''}")
-    await ankigenfin.generate_audio(deck, overwrite)
+    await ankigenfin.generate_audio(lession_list)
 
 
-async def translate_deck(deck, overwrite=False):
+async def translate_deck(lession_list):
     """
-    Translate a deck, optionally overwriting existing translation data.
+    Translate a deck
     """
     config = ankigenfin.Config.get().machine_translation
-    logger.info(f"Translating deck {deck}{' with overwrite' if overwrite else ''}")
     if config.use_deepl:
-        await ankigenfin.translate_deepl(deck, overwrite)
+        await ankigenfin.translate_deepl(lession_list)
     if config.use_gpt:
-        await ankigenfin.translate_gpt(deck, overwrite)
+        await ankigenfin.translate_gpt(lession_list)
 
 
 
-async def export_as_apkg(deck, out_file):
+async def export_as_apkg(lession_list, out_file=None):
     """
     Export data as an APKG file.
     """
     output = get_absolute_path(OUTPUT_DIR, out_file, check_exists=False)
     logger.info(f"Exporting data to {output} as APKG")
-    await ankigenfin.create_deck(deck, output)
+    await ankigenfin.create_deck(lession_list, output)
 
 
 async def list_items():
@@ -123,27 +122,23 @@ def main(argv):
 
     # Analyze deck command
     analyze_parser = subparsers.add_parser("analyze", help="Analyze a deck")
-    analyze_parser.add_argument("deck", type=str, help="ID or full path of the deck to analyze. List decks with list command")
-    analyze_parser.add_argument("--overwrite", action="store_true", help="Reanalyze an existing deck, discarding previous analysis data")
+    analyze_parser.add_argument("decks", nargs='+', type=str, help="ID or full path of the decks to analyze. List decks with list command")
 
     # Explain deck command
     explain_parser = subparsers.add_parser("explain", help="Explain a deck")
-    explain_parser.add_argument("deck", type=str, help="ID or full path of the deck to explain. List decks with list command")
-    explain_parser.add_argument("--overwrite", action="store_true", help="Reexplain an existing deck, discarding previous explanation data")
+    explain_parser.add_argument("decks", nargs='+', type=str, help="ID or full path of the decks to explain. List decks with list command")
 
     # Generate audio command
     audio_parser = subparsers.add_parser("audio", help="Generate audio for a deck")
-    audio_parser.add_argument("deck", type=str, help="ID or full path of the deck. List decks with list command")
-    audio_parser.add_argument("--overwrite", action="store_true", help="Regenerate audio for an existing deck, discarding previous audio files")
+    audio_parser.add_argument("decks", nargs='+', type=str, help="ID or full path of the decks. List decks with list command")
 
     # Translate deck command
     translate_parser = subparsers.add_parser("translate", help="Translate a deck")
-    translate_parser.add_argument("deck", type=str, help="ID or full path of the deck to translate. List decks with list command")
-    translate_parser.add_argument("--overwrite", action="store_true", help="Retranslate an existing deck, discarding previous translation data")
+    translate_parser.add_argument("decks", nargs='+', type=str, help="ID or full path of the decks to translate. List decks with list command")
 
     # Export as APKG command
     export_parser = subparsers.add_parser("export", help="Export data as APKG")
-    export_parser.add_argument("deck", type=str, help="ID or full path of the deck to translate. List decks with list command")
+    export_parser.add_argument("decks", nargs='+', type=str, help="ID or full path of the decks to translate. List decks with list command")
     export_parser.add_argument("out_file", type=str, help="Filename & Path to the output file, relative to the output folder.")
 
     list_parser = subparsers.add_parser("list", help="lists the items in the database")
@@ -155,15 +150,15 @@ def main(argv):
     elif args.command == "import":
         run_async(import_deck(args.input))
     elif args.command == "analyze":
-        run_async(analyze_deck(args.deck, args.overwrite))
+        run_async(analyze_deck(args.decks))
     elif args.command == "explain":
-        run_async(explain_deck(args.deck, args.overwrite))
+        run_async(explain_deck(args.decks))
     elif args.command == "audio":
-        run_async(generate_audio(args.deck, args.overwrite))
+        run_async(generate_audio(args.decks))
     elif args.command == "translate":
-        run_async(translate_deck(args.deck, args.overwrite))
+        run_async(translate_deck(args.decks))
     elif args.command == "export":
-        run_async(export_as_apkg(args.deck, args.out_file))
+        run_async(export_as_apkg(args.decks, out_file=args.out_file))
     elif args.command == "list":
         run_async(list_items())
     else:

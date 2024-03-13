@@ -98,24 +98,22 @@ def chunk_list(lst, chunk_size):
         yield lst[i:i + chunk_size]
 
 
-async def translate_gpt(deck, overwrite=False, all=False):
+async def translate_gpt(lession_list):
+    
     await db_init() 
 
-    items = None
-    lesson = None
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]  
 
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
+    logger.info(f"Translate with gpt for lessions {lession_list}")
 
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
+    items = await LearningItem.filter(lesson_id__in=lession_list).filter(translation_machine=None)
         
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
+    if (len(items) == 0):
+        logger.info(f'Lessions "{lession_list}" have no pending items')
         return
-
-    items = await LearningItem.filter(lesson=lesson).filter(translation_machine=None)
-
+    
     items_list = [
         {"key": item.learning_item_id, "text": item.native_text}
         for item in items

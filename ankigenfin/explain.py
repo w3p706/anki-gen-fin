@@ -156,25 +156,23 @@ async def process_row(learning_item, session, semaphore, progress_log, schema):
 
 
 
-async def explain(deck, overwrite=False, all=False):
+async def explain(lession_list):
+    
     await db_init() 
 
-    items = None
-    lesson = None
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]   
 
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
+    logger.info(f"Explain words for lessions {lession_list}")
 
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
-        
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
-        return
-
-    items = await LearningItem.filter(lesson=lesson).annotate(
+    items = await LearningItem.filter(lesson_id__in=lession_list).annotate(
         explanation_count=Count('explanation')
     ).filter(explanation_count=0)
+        
+    if (len(items) == 0):
+        logger.info(f'Lessions "{lession_list}" have pending no items')
+        return
 
     schema = load_json_schema()
 

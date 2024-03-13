@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "process.py",
             "console": "integratedTerminal",
-            "args": ["process", "LB-S1-L17.csv"]
+            "args": ["process", "Sami.csv"]
         }
         // see also https://stackoverflow.com/questions/72351552/vs-code-debugging-prompting-for-arguments-and-also-setting-the-working-directory
     ]

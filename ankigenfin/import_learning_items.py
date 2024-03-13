@@ -81,7 +81,7 @@ async def import_learning_items(input_file):
     logger.info(f'A total {total_rows} in file.')
 
     for key, value in rows_imported.items():
-        logger.info(f'Lesson {key}: {value} rows imported or updated')
+        logger.info(f'Lesson {key}: {value} new rows imported or changed rows updated')
 
     return lessons, rows_imported, total_rows
 

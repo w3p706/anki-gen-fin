@@ -19,28 +19,27 @@ logger = logging.getLogger(__name__)
 
 # https://github.com/DeepLcom/deepl-python
 
-async def translate_deepl(config, deck, overwrite=False, all=False, max_parallel_calls=5, timeout=60):
+
+async def translate_deepl(lession_list, max_parallel_calls=5, timeout=60):
+    
     await db_init() 
+
+    lessons = await Lesson.filter(folder__in=lession_list).all()
+    if (not (lessons is None or len(lessons) == 0)):
+        lession_list = [lesson.lesson_id for lesson in lessons]  
+
+    logger.info(f"Creating Deepl translations for lessions {lession_list}")
 
     deepl_key = os.environ.get("DEEPL_API_KEY")
     deepl_url = os.environ.get("DEEPL_URL")
     translator = deepl.Translator(deepl_key, server_url=deepl_url).set_app_info("ankigenfin", "0.1")
 
-    items = None
-    lesson = None
+    items = await LearningItem.filter(lesson_id__in=lession_list).filter(translation_machine=None)
 
-    if (isinstance(deck, (int))):
-        lesson = await Lesson.get_or_none(lesson_id=deck)
-
-    if (lesson is None):
-        lesson = await Lesson.get_or_none(folder=deck)
-        
-    if (lesson is None):
-        logger.error(f'Deck "{deck}" not found')
+    if (len(items) == 0):
+        logger.info(f'Lessions "{lession_list}" have no pending items')
         return
-
-    items = await LearningItem.filter(lesson=lesson).filter(translation_machine=None)
-
+    
     native_texts = [item.native_text for item in items]
 
     result = translator.translate_text(native_texts, source_lang="FI", target_lang="DE")
